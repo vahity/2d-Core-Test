@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: f428a511dac82174099449e24cfe860b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3926208629213736051
+    second: Snow Bullet_0
+  - first:
+      213: 3016886495976959432
+    second: Snow Bullet_1
+  - first:
+      213: -5067973487756547148
+    second: Snow Bullet_2
+  - first:
+      213: -6954770456577296068
+    second: Snow Bullet_3
+  - first:
+      213: -7474741057906887157
+    second: Snow Bullet_4
+  - first:
+      213: -2489950297353707723
+    second: Snow Bullet_5
+  - first:
+      213: 4451470669979547174
+    second: Snow Bullet_6
+  - first:
+      213: -6344921233372915593
+    second: Snow Bullet_7
+  - first:
+      213: -9222779247653045493
+    second: Snow Bullet_8
+  - first:
+      213: -7872170426886099776
+    second: Snow Bullet_9
+  - first:
+      213: 7265869943437561638
+    second: Snow Bullet_10
+  - first:
+      213: 2777158512027994110
+    second: Snow Bullet_11
+  - first:
+      213: 2928259871555635592
+    second: Snow Bullet_12
+  - first:
+      213: -2549603965631806587
+    second: Snow Bullet_13
+  - first:
+      213: -2889395320669823418
+    second: Snow Bullet_14
+  - first:
+      213: 4582276305596000166
+    second: Snow Bullet_15
+  - first:
+      213: 3188710491855996796
+    second: Snow Bullet_16
+  - first:
+      213: 3041599034702024381
+    second: Snow Bullet_17
+  - first:
+      213: 990785630120322373
+    second: Snow Bullet_18
+  - first:
+      213: 3220337407386850339
+    second: Snow Bullet_19
+  - first:
+      213: 1674724382587541906
+    second: Snow Bullet_20
+  - first:
+      213: 1555462801598287244
+    second: Snow Bullet_21
+  - first:
+      213: 3218423918936328729
+    second: Snow Bullet_22
+  - first:
+      213: 4041052280835108266
+    second: Snow Bullet_23
+  - first:
+      213: 2937790974754914418
+    second: Snow Bullet_24
+  - first:
+      213: 3830980181977832997
+    second: Snow Bullet_25
+  - first:
+      213: -3930492669273431321
+    second: Snow Bullet_26
+  - first:
+      213: -7496542341506732171
+    second: Snow Bullet_27
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Snow Bullet_0
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1123
+        width: 485
+        height: 488
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8354adbd0e4389c0800000000000000
+      internalID: -3926208629213736051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow Bullet_1
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 1126
+        width: 486
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd2160b8422ed920800000000000000
+      internalID: 3016886495976959432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow Bullet_2
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 1130
+        width: 470
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb6c23d6f0faa9b0800000000000000
+      internalID: -5067973487756547148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow Bullet_4
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 1137
+        width: 514
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06be675c92644890800000000000000
+      internalID: -7474741057906887157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
