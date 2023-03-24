@@ -3,66 +3,71 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MarketManager<T> : PersistentSingleton<T> where T : PersistentSingleton<T>
+namespace MH2B.ShopManagement
 {
-	[SerializeField] private PublishSettings.PublishStore targetStore;
-
-	public List<UnconsumedPurchases> UnconsomedPurchases = new List<UnconsumedPurchases>();
-	public List<StoreSKUDetails> StoreSKUDetails = new List<StoreSKUDetails>();
-
-	protected override void Awake()
+	public abstract class MarketManager<T> : PersistentSingleton<T> where T : PersistentSingleton<T>
 	{
-		if (PublishSettings.PUBLISH_STORE != targetStore)
+		[SerializeField] private PublishSettings.PublishStore targetStore;
+
+		public List<UnconsumedPurchases> UnconsomedPurchases = new List<UnconsumedPurchases>();
+		public List<StoreSKUDetails> StoreSKUDetails = new List<StoreSKUDetails>();
+
+		protected override void Awake()
 		{
-			Destroy(this);
-			return;
+			if (PublishSettings.PUBLISH_STORE != targetStore)
+			{
+				Destroy(this);
+				return;
+			}
+			base.Awake();
 		}
-		base.Awake();
-	}
 
-	public void RemoveFormUncomsomedPurchases(string sku)
-	{
-		UnconsumedPurchases found = UnconsomedPurchases.Find(x => x.ProductID.Equals(sku));
-		if (found != null)
+		public void RemoveFormUncomsomedPurchases(string sku)
 		{
-			UnconsomedPurchases.Remove(found);
+			UnconsumedPurchases found = UnconsomedPurchases.Find(x => x.ProductID.Equals(sku));
+			if (found != null)
+			{
+				UnconsomedPurchases.Remove(found);
+			}
 		}
 	}
-}
 
-public class UnconsumedPurchases
-{
-	public string ProductID;
-	public string PurchaseToken;
-
-	public UnconsumedPurchases(string productID , string purchaseToken)
+	public class UnconsumedPurchases
 	{
-		ProductID = productID;
-		PurchaseToken = purchaseToken;
-	}
-}
+		public string ProductID;
+		public string PurchaseToken;
 
-public class StoreSKUDetails
-{
-	public string ProductID;
-	public string ProductPrice;
-
-	public StoreSKUDetails(string productID, string productPrice)
-	{
-		ProductID = productID;
-		ProductPrice = productPrice;
-	}
-}
-
-public class PublishSettings
-{
-	public enum PublishStore
-	{
-		None,
-		Bazaar,
-		Myket,
-		GooglePlay
+		public UnconsumedPurchases(string productID, string purchaseToken)
+		{
+			ProductID = productID;
+			PurchaseToken = purchaseToken;
+		}
 	}
 
-	public static PublishStore PUBLISH_STORE = PublishStore.Bazaar;
+	public class StoreSKUDetails
+	{
+		public string ProductID;
+		public string ProductPrice;
+
+		public StoreSKUDetails(string productID, string productPrice)
+		{
+			ProductID = productID;
+			ProductPrice = productPrice;
+		}
+	}
+
+	public class PublishSettings
+	{
+		public enum PublishStore
+		{
+			None,
+			Bazaar,
+			Myket,
+			GooglePlay
+		}
+
+		public static PublishStore PUBLISH_STORE = PublishStore.Bazaar;
+	}
+
 }
+
