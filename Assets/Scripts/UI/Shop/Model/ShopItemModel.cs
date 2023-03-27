@@ -3,13 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class ShopItemModel
+namespace MH2B.ShopManagement
 {
-	public string ID;
-	public string Name;
-	public string Title;
-	[TextArea] public string Description;
-	public string SKU;
-	public double Cost;
+	[Serializable]
+	public class ShopItemModel
+	{
+		public string ID;
+		public string Name;
+		public string Title;
+		[TextArea] public string Description;
+		public string SKU;
+		public double Cost;
+	}
+
 }
+
+

@@ -2,56 +2,62 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[MarkedOnlineMarketClass("TargetStore")]
-public class MyketMarket : IOnlineMarket
+namespace MH2B.ShopManagement
 {
-	private const string RSA = "";
-
-	public static string TargetStore => PublishSettings.PublishStore.Myket.ToString();
-
-	public void InitMarket()
+	[MarkedOnlineMarketClass("TargetStore")]
+	public class MyketMarket : IOnlineMarket
 	{
-		MyketManager.Instance.Init(RSA);
-	}
+		private const string RSA = "";
 
-	public void Purchase(string productID, long price, Action<bool, string> onConsumed = null)
-	{
-		MyketManager.Instance.BuyProduct(productID, onConsumed);
-	}
+		public static string TargetStore => PublishSettings.PublishStore.Myket.ToString();
 
-	public void UnConsumedConsume(string productID, Action<bool, string> onFinished = null)
-	{
-		MyketManager.Instance.UnConsumedConsume(productID, onFinished);
-	}
+		public void InitMarket()
+		{
+			MyketManager.Instance.Init(RSA);
+		}
 
-	public void LoadPurchaseQuery(string[] skus , Action onComplete)
-	{
-		MyketManager.Instance.LoadPurchaseQuery(skus , onComplete);
-	}
+		public void Purchase(string productID, long price, Action<bool, string> onConsumed = null)
+		{
+			MyketManager.Instance.BuyProduct(productID, onConsumed);
+		}
 
-	public List<UnconsumedPurchases> GetUnconsumedPurchases()
-	{
-		return MyketManager.Instance.UnconsomedPurchases;
-	}
+		public void UnConsumedConsume(string productID, Action<bool, string> onFinished = null)
+		{
+			MyketManager.Instance.UnConsumedConsume(productID, onFinished);
+		}
 
-	public void LoadProductsQuery(string[] skus, Action onComplete)
-	{
-		MyketManager.Instance.LoadProductsQuery(skus , onComplete);
-	}
+		public void LoadPurchaseQuery(string[] skus, Action onComplete)
+		{
+			MyketManager.Instance.LoadPurchaseQuery(skus, onComplete);
+		}
 
-	public List<StoreSKUDetails> GetStoreSKUDetails()
-	{
-		return MyketManager.Instance.StoreSKUDetails;
-	}
+		public List<UnconsumedPurchases> GetUnconsumedPurchases()
+		{
+			return MyketManager.Instance.UnconsomedPurchases;
+		}
 
-	public void RemoveFormUncomsomedPurchases(string productID)
-	{
-		MyketManager.Instance.RemoveFormUncomsomedPurchases(productID);
-	}
+		public void LoadProductsQuery(string[] skus, Action onComplete)
+		{
+			MyketManager.Instance.LoadProductsQuery(skus, onComplete);
+		}
 
-	public void Disconnect()
-	{
-		throw new NotImplementedException();
+		public List<StoreSKUDetails> GetStoreSKUDetails()
+		{
+			return MyketManager.Instance.StoreSKUDetails;
+		}
+
+		public void RemoveFormUncomsomedPurchases(string productID)
+		{
+			MyketManager.Instance.RemoveFormUncomsomedPurchases(productID);
+		}
+
+		public void Disconnect()
+		{
+			throw new NotImplementedException();
+		}
+
 	}
 
 }
+
+
