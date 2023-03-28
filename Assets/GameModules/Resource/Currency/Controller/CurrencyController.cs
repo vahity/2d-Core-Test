@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace MH2B.GameModules.ResourceManagment
 {
-	public class ItemController : ResourceControllerBase
+	public class CurrencyController : ResourceControllerBase
 	{
-		public ItemController(ItemResource resource) : base(resource)
+		public CurrencyController(CurrencyResource resource) : base(resource)
 		{
 		}
 	}

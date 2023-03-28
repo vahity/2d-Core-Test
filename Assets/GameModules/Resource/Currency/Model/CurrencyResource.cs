@@ -7,28 +7,28 @@ using UnityEngine;
 namespace MH2B.GameModules.ResourceManagment
 {
 	[Serializable]
-	public class ItemResource : ResourceBase
+	public class CurrencyResource : ResourceBase
 	{
-		public ItemResource() { }
+		public CurrencyResource() { }
 
-		public ItemResource(ItemResource itemResource) : base(itemResource) 
+		public CurrencyResource(CurrencyResource itemResource) : base(itemResource) 
 		{
 			InstanceResource = this;
 		}
 
-		[JsonIgnore] public ItemResource InstanceResource;
+		[JsonIgnore] public CurrencyResource InstanceResource;
 
 		public override ResourceControllerBase AddContoller()
 		{
 			// Create new instance of the resource to avoid refrence changes be saved on the main SO
-			InstanceResource = new ItemResource(this);
-			ItemController itemController = new ItemController(InstanceResource);
+			InstanceResource = new CurrencyResource(this);
+			CurrencyController itemController = new CurrencyController(InstanceResource);
 			return itemController;
 		}
 
 		public override ResourceBase LoadResource()
 		{
-			return PlayrPrefsUtility.GetData<ItemResource>(ResourceName);
+			return PlayrPrefsUtility.GetData<CurrencyResource>(ResourceName);
 		}
 
 		public override ResourceBase SaveResource()

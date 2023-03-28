@@ -68,6 +68,20 @@ namespace MH2B.GameModules.ResourceManagment
 			resource.SetValue(value);
 		}
 
+		public static void OperationResult(string resourceName, Rewarding.RewardOperation operation , int amount)
+		{
+			ResourceControllerBase resource = ResourceManager.Instance?.GetResourceByName<ResourceControllerBase>(resourceName);
+			switch (operation)
+			{
+				case Rewarding.RewardOperation.AddValue:
+					resource?.SetValue(resource.GetValue() + amount);
+					break;
+				case Rewarding.RewardOperation.SetValue:
+					resource?.SetValue(amount);
+					break;
+			}
+		}
+
 	}
 }
 

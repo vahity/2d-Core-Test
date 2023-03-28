@@ -6,9 +6,9 @@ using UnityEngine;
 namespace MH2B.GameModules.ResourceManagment
 {
 	[CreateAssetMenu(fileName = "ItemResource", menuName = "Resource/Item")]
-	public class ItemResourceSO : ScriptableObjectIDDrawer
+	public class CurrencyResourceSO : ScriptableObjectIDDrawer
 	{
-		public ItemResource ItemResource;
+		public CurrencyResource ItemResource;
 
 		protected override void AssignNewID()
 		{
