@@ -28,7 +28,8 @@ namespace MH2B.GameModules.ResourceManagment
 
 		public override ResourceBase LoadResource()
 		{
-			return PlayrPrefsUtility.GetData<CurrencyResource>(ResourceName);
+			CurrencyResource currencyResource = PlayrPrefsUtility.GetData<CurrencyResource>(ResourceName);
+			return currencyResource == default ? this : currencyResource;
 		}
 
 		public override ResourceBase SaveResource()

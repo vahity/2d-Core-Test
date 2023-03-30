@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74f643f33c36284eb5e6da2d8ebfa36, type: 3}
-  m_Name: Coin
+  m_Script: {fileID: 11500000, guid: 141d1d3b5cbc8134eb890da85cdf8d8b, type: 3}
+  m_Name: Level_2
   m_EditorClassIdentifier: 
-  id: 6cd6ce5b-0728-4619-b990-4a0cd82cf82d
-  ItemResource:
-    id: 6cd6ce5b-0728-4619-b990-4a0cd82cf82d
-    resouurceName: Coin
-    isAvailable: 1
-    value: 0
+  LevelIndex: 2
+  LevelResourceName: Level_2
+  LevelScene: {fileID: 102900000, guid: 8fc2cbb0477085d43bcfa7faf797dc6d, type: 3}

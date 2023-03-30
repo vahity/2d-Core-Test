@@ -7,7 +7,7 @@ namespace MH2B.GameModules.ResourceManagment
 	[CreateAssetMenu(fileName = "ResourcesContainer", menuName = "Resource/Conatiner")]
 	public class ResourcesContainer : ScriptableObject
 	{
-		public List<CurrencyResourceSO> ItemResources = new List<CurrencyResourceSO>();
+		public List<CurrencyResourceSO> CurrencyResources = new List<CurrencyResourceSO>();
 	}
 }
 
