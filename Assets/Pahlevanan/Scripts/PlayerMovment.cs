@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
+    public static int x = 0;
+    public int x1 = 0;
+    public GameObject Sefid, Zard, Ghermez;
 
     public GameObject PausePanel;
 
@@ -48,12 +51,40 @@ public class PlayerMovment : MonoBehaviour
         PausePanel.SetActive(false);
         Time.timeScale = 1;
         isJumping = true;
+        if (x==0)
+        {
+            Sefid.SetActive(false);
+            Zard.SetActive(false);
+            Ghermez.SetActive(false);
+        }
 
     }
 
     // Update is called once per frame
     private void Update()
     {
+        x1 = x;
+
+        while (x < 0)
+        {
+            x = 0;
+        }
+        if (x == 0)
+        {
+            Zard.SetActive(false);
+            Ghermez.SetActive(false);
+        }
+
+        if (x == 1)
+        {
+            Zard.SetActive(true);
+        }
+        if (x == 2)
+        {
+            Zard.SetActive(false);
+            Ghermez.SetActive(true);
+        }
+        
         //Walk Methode
         dirx = 1f;
         rb.velocity = new Vector2(dirx * WalkSpeed, rb.velocity.y);
@@ -180,12 +211,20 @@ public class PlayerMovment : MonoBehaviour
     {
         if(other.tag == "Chale")
         {
+            x++;
             anim.SetTrigger("TELOOO");
             Debug.Log("chale");
             WalkSpeed = 8f;
             Invoke("SpeedReset", 1.2f);
+            StartCoroutine(EnemyDistance());
 
         }
+    }
+    IEnumerator EnemyDistance()
+    {
+
+        yield return new WaitForSeconds(5f);
+        x--;
     }
     private void OnTriggerExit2D(Collider2D other)
     {
