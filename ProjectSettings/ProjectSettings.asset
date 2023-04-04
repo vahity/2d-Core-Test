@@ -138,7 +138,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2.35
+  bundleVersion: 2.45
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -242,9 +242,9 @@ PlayerSettings:
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 1
   useCustomLauncherManifest: 0
-  useCustomMainGradleTemplate: 1
-  useCustomLauncherGradleManifest: 1
-  useCustomBaseGradleTemplate: 1
+  useCustomMainGradleTemplate: 0
+  useCustomLauncherGradleManifest: 0
+  useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 0
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 3
@@ -275,7 +275,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 3d36dd44d0eb42c46bba37380ab71373, type: 3}
+      m_Icon: {fileID: 2800000, guid: 62b2db173c93bdf48b82eb44af50eff8, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

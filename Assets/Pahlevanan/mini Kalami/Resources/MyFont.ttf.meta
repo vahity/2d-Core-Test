@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: af0d183b01fa84742847691ebdf6bdcc
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - IranNastaliq
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 20ca6ca8cfbbf7944a97f905c21c7c78, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

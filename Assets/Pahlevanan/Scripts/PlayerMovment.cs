@@ -28,7 +28,7 @@ public class PlayerMovment : MonoBehaviour
 
     [SerializeField] private AudioSource JumpSoundEffect;
     float verticalmove;
-    public bool isJumping = false;
+    public bool isJumping;
     public int doubleJump = 2;
     private object collision;
     public bool Ispaused = false;
@@ -47,6 +47,7 @@ public class PlayerMovment : MonoBehaviour
        // anim = GetComponent<Animator>();
         PausePanel.SetActive(false);
         Time.timeScale = 1;
+        isJumping = true;
 
     }
 
@@ -80,11 +81,11 @@ public class PlayerMovment : MonoBehaviour
      //       }
      //   }
 
-        if (doubleJump == 0)
-        {
-            isJumping = false;
-            StartCoroutine(JumpAgain());
-        }
+      //  if (doubleJump == 0)
+     //   {
+     //       isJumping = false;
+     //       StartCoroutine(JumpAgain());
+      //  }
 
         UpadateAnimationUpdate();
         
@@ -96,9 +97,9 @@ public class PlayerMovment : MonoBehaviour
         // rb.velocity = new Vector2(rb.velocity.x, J);
 
         // Invoke("jump", 2f);
-        if (doubleJump <= 2 && doubleJump >= 0)
-        {
-            isJumping = true;
+      //  if (doubleJump <= 2 && doubleJump >= 0)
+       // {
+            
 
             if (isJumping)
             {
@@ -107,12 +108,14 @@ public class PlayerMovment : MonoBehaviour
                     
                     JumpSoundEffect.Play();
                     rb.velocity = new Vector2(rb.velocity.x, J);
+                    isJumping = false;
+                    StartCoroutine(JumpAgain());
 
 
-                    doubleJump-=2;
-               // }
-            }
+            //  doubleJump-=2;
+            // }
         }
+       // }
 
 
     }
@@ -170,8 +173,8 @@ public class PlayerMovment : MonoBehaviour
 
     IEnumerator JumpAgain()
     {
-        yield return new WaitForSeconds(2f);
-        doubleJump = 2;
+        yield return new WaitForSeconds(0.7f);
+        isJumping=true;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
