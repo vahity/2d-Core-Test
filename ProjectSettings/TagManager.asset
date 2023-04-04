@@ -12,6 +12,9 @@ TagManager:
   - Chale
   - PuzzelButton
   - SpeedBoost
+  - mane
+  - backgroundprefab
+  - coin
   layers:
   - Default
   - TransparentFX

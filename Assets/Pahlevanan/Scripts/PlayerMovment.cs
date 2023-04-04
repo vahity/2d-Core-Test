@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
+    public static int x = 0;
+    public int x1 = 0;
+    public GameObject Sefid, Zard, Ghermez;
 
     public GameObject PausePanel;
 
@@ -28,7 +31,7 @@ public class PlayerMovment : MonoBehaviour
 
     [SerializeField] private AudioSource JumpSoundEffect;
     float verticalmove;
-    public bool isJumping = false;
+    public bool isJumping;
     public int doubleJump = 2;
     private object collision;
     public bool Ispaused = false;
@@ -47,12 +50,41 @@ public class PlayerMovment : MonoBehaviour
        // anim = GetComponent<Animator>();
         PausePanel.SetActive(false);
         Time.timeScale = 1;
+        isJumping = true;
+        if (x==0)
+        {
+            Sefid.SetActive(false);
+            Zard.SetActive(false);
+            Ghermez.SetActive(false);
+        }
 
     }
 
     // Update is called once per frame
     private void Update()
     {
+        x1 = x;
+
+        while (x < 0)
+        {
+            x = 0;
+        }
+        if (x == 0)
+        {
+            Zard.SetActive(false);
+            Ghermez.SetActive(false);
+        }
+
+        if (x == 1)
+        {
+            Zard.SetActive(true);
+        }
+        if (x == 2)
+        {
+            Zard.SetActive(false);
+            Ghermez.SetActive(true);
+        }
+        
         //Walk Methode
         dirx = 1f;
         rb.velocity = new Vector2(dirx * WalkSpeed, rb.velocity.y);
@@ -80,11 +112,11 @@ public class PlayerMovment : MonoBehaviour
      //       }
      //   }
 
-        if (doubleJump == 0)
-        {
-            isJumping = false;
-            StartCoroutine(JumpAgain());
-        }
+      //  if (doubleJump == 0)
+     //   {
+     //       isJumping = false;
+     //       StartCoroutine(JumpAgain());
+      //  }
 
         UpadateAnimationUpdate();
         
@@ -96,9 +128,9 @@ public class PlayerMovment : MonoBehaviour
         // rb.velocity = new Vector2(rb.velocity.x, J);
 
         // Invoke("jump", 2f);
-        if (doubleJump <= 2 && doubleJump >= 0)
-        {
-            isJumping = true;
+      //  if (doubleJump <= 2 && doubleJump >= 0)
+       // {
+            
 
             if (isJumping)
             {
@@ -107,12 +139,14 @@ public class PlayerMovment : MonoBehaviour
                     
                     JumpSoundEffect.Play();
                     rb.velocity = new Vector2(rb.velocity.x, J);
+                    isJumping = false;
+                    StartCoroutine(JumpAgain());
 
 
-                    doubleJump-=2;
-               // }
-            }
+            //  doubleJump-=2;
+            // }
         }
+       // }
 
 
     }
@@ -170,19 +204,27 @@ public class PlayerMovment : MonoBehaviour
 
     IEnumerator JumpAgain()
     {
-        yield return new WaitForSeconds(2f);
-        doubleJump = 2;
+        yield return new WaitForSeconds(0.7f);
+        isJumping=true;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Chale")
         {
+            x++;
             anim.SetTrigger("TELOOO");
             Debug.Log("chale");
             WalkSpeed = 8f;
             Invoke("SpeedReset", 1.2f);
+            StartCoroutine(EnemyDistance());
 
         }
+    }
+    IEnumerator EnemyDistance()
+    {
+
+        yield return new WaitForSeconds(5f);
+        x--;
     }
     private void OnTriggerExit2D(Collider2D other)
     {
