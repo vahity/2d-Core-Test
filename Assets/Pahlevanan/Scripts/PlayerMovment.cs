@@ -44,6 +44,7 @@ public class PlayerMovment : MonoBehaviour
     private void Start()
     
     {
+        int x = 0;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         Sprite = GetComponent<SpriteRenderer>();

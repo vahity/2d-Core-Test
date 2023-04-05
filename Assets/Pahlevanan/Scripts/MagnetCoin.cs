@@ -38,7 +38,7 @@ public class MagnetCoin : MonoBehaviour
             //  coinCollider.radius = originalColliderSize;
             //  Debug.Log("Dimagnet");
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         foreach (GameObject coin in coins)
         {
             CircleCollider2D coinCollider = coin.GetComponent<CircleCollider2D>();

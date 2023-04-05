@@ -17,13 +17,13 @@ public class MenuManager : MonoBehaviour
     public Button button3;
     private void Start()
     {
-        Setting.SetActive(false);
+       // Setting.SetActive(false);
         skinScreen.SetActive(false);
         pausepanel.SetActive(false);
     }
     public void GoHome()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("NewMenu");
     }
     public void GoMiniGame()
     {

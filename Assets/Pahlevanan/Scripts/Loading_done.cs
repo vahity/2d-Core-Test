@@ -23,13 +23,13 @@ public class Loading_done : MonoBehaviour
         {
             yield return new WaitForSeconds(4.5f);
             Debug.Log("sabr kard");
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("NewMenu");
 
         }
     }
     public void Home()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("NewMenu");
     }
     
     
