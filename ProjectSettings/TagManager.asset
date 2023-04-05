@@ -15,6 +15,7 @@ TagManager:
   - mane
   - backgroundprefab
   - coin
+  - bullet
   layers:
   - Default
   - TransparentFX

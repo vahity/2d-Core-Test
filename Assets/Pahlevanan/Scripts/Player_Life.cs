@@ -8,7 +8,7 @@ using System.Drawing;
 
 public class Player_Life : MonoBehaviour
 {
-    public TMP_Text Cointext , GTime , wcointext ,wGtime;
+    public TMP_Text Cointext, GTime, wcointext, wGtime;
     public float Coinval;
     public ItemCollector ic;
     private Animator anim;
@@ -30,7 +30,7 @@ public class Player_Life : MonoBehaviour
     private void Awake()
     {
         //load health save player
-       // saveHealth = PlayerPrefs.GetInt("Health");
+        // saveHealth = PlayerPrefs.GetInt("Health");
     }
 
     private void Start()
@@ -50,7 +50,7 @@ public class Player_Life : MonoBehaviour
             Health_05.SetActive(true);
         }
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Snow")
@@ -95,7 +95,7 @@ public class Player_Life : MonoBehaviour
                 Health_05.SetActive(false);
                 //save kon health ro ba health= health - 1;
                 PlayerPrefs.SetInt("Health", saveHealth);
-            
+
                 saveHealth--;
                 //health == 0
 
@@ -103,8 +103,13 @@ public class Player_Life : MonoBehaviour
                 Die();
             }
         }
+        if (other.tag == "bullet")
+        {
+            Debug.Log("moooordBaAshaee");
+            Die();
+        }
     }
-    
+
     private void Die()
     {
         GameTime = Time.time;
@@ -129,5 +134,6 @@ public class Player_Life : MonoBehaviour
         khord.Play();
 
     }
+   
 
 }

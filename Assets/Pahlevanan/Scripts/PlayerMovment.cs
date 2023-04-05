@@ -78,6 +78,7 @@ public class PlayerMovment : MonoBehaviour
         if (x == 1)
         {
             Zard.SetActive(true);
+            Ghermez.SetActive(false);
         }
         if (x == 2)
         {
@@ -223,7 +224,7 @@ public class PlayerMovment : MonoBehaviour
     IEnumerator EnemyDistance()
     {
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(9f);
         x--;
     }
     private void OnTriggerExit2D(Collider2D other)

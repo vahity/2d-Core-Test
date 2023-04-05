@@ -40,12 +40,15 @@ public class ItemCollector : MonoBehaviour
 
             StartCoroutine(MoveCoinToTargetPosition(collision.gameObject));
 
+            Destroy(collision.gameObject, 0.3f);
+            coins++;
+            score++;
+            coinText.text = "" + score;
+
+
         }
 
-        Destroy(collision.gameObject, 0.5f);
-        coins++;
-        score++;
-        coinText.text = "" + score;
+        
 
 
 
