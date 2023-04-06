@@ -9,6 +9,8 @@ public class PlayerMovment : MonoBehaviour
     public int x1 = 0;
     public GameObject Sefid, Zard, Ghermez;
 
+    public GameObject[] shirtList;
+
     public GameObject PausePanel;
 
     public static PlayerMovment instance;
@@ -45,6 +47,12 @@ public class PlayerMovment : MonoBehaviour
     
     {
         int x = 0;
+        int shirtSelected = UserManager.instance.Shirt;
+        foreach(var sl in shirtList)
+            sl.SetActive(false);
+
+        shirtList[shirtSelected].SetActive(true);
+        
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         Sprite = GetComponent<SpriteRenderer>();

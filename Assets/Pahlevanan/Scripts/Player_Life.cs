@@ -125,6 +125,7 @@ public class Player_Life : MonoBehaviour
     }
     public void win()
     {
+        GameTime = Time.time;
         wcointext.text = ic.score.ToString();
         wGtime.text = GameTime.ToString();
 

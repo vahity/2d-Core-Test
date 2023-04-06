@@ -19,6 +19,8 @@ public class ItemCollector : MonoBehaviour
 
     private IEnumerator MoveCoinToTargetPosition(GameObject coin)
     {
+        
+        
         while (Vector2.Distance(coin.transform.position, targetPosition) > 0.1f)
         {
             coin.transform.position = Vector2.MoveTowards(coin.transform.position, targetPosition, Time.deltaTime * speed);
@@ -27,6 +29,7 @@ public class ItemCollector : MonoBehaviour
                 break;
             }
             yield return null;
+        
         }
     }
 

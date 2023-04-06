@@ -12,17 +12,20 @@ public class ShieldAbility : MonoBehaviour
 
     IEnumerator DisableObjects()
     {
-        GameObject[] objectsToDisable = GameObject.FindGameObjectsWithTag("mane");
+        GameObject[] objectsToDisable = GameObject.FindGameObjectsWithTag("Chale");
 
         foreach (GameObject obj in objectsToDisable)
         {
-            Debug.Log(obj.name);    
+            Debug.Log(obj);
             Collider2D collider = obj.GetComponent<Collider2D>();
 
             if (collider != null)
             {
                 collider.enabled = false;
             }
+            
+                
+             
         }
 
         yield return new WaitForSeconds(4f);
@@ -30,10 +33,13 @@ public class ShieldAbility : MonoBehaviour
         foreach (GameObject obj in objectsToDisable)
         {
             Collider2D collider = obj.GetComponent<Collider2D>();
+
+
             if (collider != null)
             {
                 collider.enabled = true;
             }
+
         }
     }
 
