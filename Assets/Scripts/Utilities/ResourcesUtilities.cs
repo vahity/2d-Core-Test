@@ -48,7 +48,7 @@ namespace MH2B.GameModules.ResourceManagment
 			return resource.GetValue();
 		}
 
-		public static void Setavailibility(string resourceName, bool availibility)
+		public static void SetAvailibility(string resourceName, bool availibility)
 		{
 			ResourceControllerBase resource = ResourceManager.Instance?.GetResourceByName<ResourceControllerBase>(resourceName);
 			if (resource == default)

@@ -9,4 +9,5 @@ public class LevelItemSO : ScriptableObject
     public int LevelIndex;
     public string LevelResourceName;
     public Object LevelScene;
+    public Sprite LevelIcon;
 }

@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141d1d3b5cbc8134eb890da85cdf8d8b, type: 3}
-  m_Name: Level_1
+  m_Script: {fileID: 11500000, guid: a74f643f33c36284eb5e6da2d8ebfa36, type: 3}
+  m_Name: Level_10
   m_EditorClassIdentifier: 
-  LevelIndex: 1
-  LevelResourceName: Level_1
-  LevelScene: {fileID: 102900000, guid: 30f7f26831cec7146a5cd1ff0b198eee, type: 3}
+  id: d59dbe6f-939f-4b70-aa99-7d51a55c72dd
+  CurrencyResource:
+    id: d59dbe6f-939f-4b70-aa99-7d51a55c72dd
+    resouurceName: Level_10
+    isAvailable: 0
+    value: 0

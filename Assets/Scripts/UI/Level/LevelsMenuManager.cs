@@ -12,6 +12,7 @@ public class LevelsMenuManager : MonoBehaviour
 	[SerializeField] private LevelItemFrame levelItemFrame;
 	[SerializeField] private int maxLevelsParentCapacity = 10;
 
+	private bool canOpenLevelScenes = true;
 
 	private void Awake()
 	{
@@ -61,7 +62,20 @@ public class LevelsMenuManager : MonoBehaviour
 
 	private void OnOpenLevelClicked(LevelItemSO levelItemSO)
 	{
+		if (!canOpenLevelScenes) return;
+
+		canOpenLevelScenes = false;
 		SceneManager.LoadScene(levelItemSO.LevelScene.name);
+	}
+
+	public void BackBtnClicked()
+	{
+		// Load back scene
+	}
+
+	public void HambergBtnClicked()
+	{
+		// load what should be loaded 
 	}
 
 }

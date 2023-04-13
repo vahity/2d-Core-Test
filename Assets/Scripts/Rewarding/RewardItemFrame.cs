@@ -35,9 +35,9 @@ namespace MH2B.Rewarding
 		private IEnumerator MoveToTargetRoutine(Vector2 targetPos, float timer)
 		{
 			yield return new WaitForSeconds(timer);
-			while(Vector2.Distance(rectTransform.anchoredPosition, targetPos) > 1)
+			while(Vector2.Distance(rectTransform.position, targetPos) > 1)
 			{
-				rectTransform.anchoredPosition = Vector2.MoveTowards(rectTransform.anchoredPosition, targetPos, Time.deltaTime * speed);
+				rectTransform.position = Vector2.MoveTowards(rectTransform.position, targetPos, Time.deltaTime * speed);
 				yield return null;
 			}
 			yield return new WaitForSeconds(1f);

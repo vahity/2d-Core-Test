@@ -9,9 +9,15 @@ namespace MH2B.GameModules.ResourceManagment
 	public class ReadOnlyAttribute : PropertyAttribute
 	{
 	}
+#if UNITY_EDITOR
 	[CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
-	public class ReadOnlyDrawer : PropertyDrawer
+#endif
+	public class ReadOnlyDrawer
+#if UNITY_EDITOR
+	: PropertyDrawer
+#endif
 	{
+#if UNITY_EDITOR
 		public override float GetPropertyHeight(SerializedProperty property,
 												GUIContent label)
 		{
@@ -25,6 +31,7 @@ namespace MH2B.GameModules.ResourceManagment
 			EditorGUI.PropertyField(position, property, label, true);
 			GUI.enabled = true;
 		}
+#endif
 	}
 }
 

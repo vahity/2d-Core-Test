@@ -243,7 +243,7 @@ RectTransform:
   m_GameObject: {fileID: 2303772261132762200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2303772260528254453}
   - {fileID: 2303772260337757948}
@@ -305,11 +305,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577022bc1cde864a93e13f07feba92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasGroup: {fileID: 859643228219146492}
   rectTransform: {fileID: 2303772261132762201}
+  canvasGroup: {fileID: 859643228219146492}
   rewardIcon: {fileID: 2303772260528254454}
   rewardAmount: {fileID: 2303772260337757949}
-  speed: 250
+  speed: 500
 --- !u!225 &859643228219146492
 CanvasGroup:
   m_ObjectHideFlags: 0

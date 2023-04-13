@@ -4,10 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelItemFrame : MonoBehaviour
 {
-    [SerializeField] private GameObject locked;
+    [SerializeField] private Color lockedColor;
+    [SerializeField] private Image levelIcon;
+    [SerializeField] private GameObject openLevel;
     [SerializeField] private RTLTextMeshPro levelIndexText;
     [SerializeField] List<GameObject> stars = new List<GameObject>();
 
@@ -18,10 +21,15 @@ public class LevelItemFrame : MonoBehaviour
 	public void Setup(LevelItemSO levelItemSO)
     {
         this.levelItemSO = levelItemSO;
-        levelIndexText.text = levelItemSO.LevelIndex.ToString();
+        levelIcon.sprite = levelItemSO.LevelIcon;
+		levelIndexText.text = levelItemSO.LevelIndex.ToString();
         bool unlocked = ResourcesUtilities.GetAvaialbility(levelItemSO.LevelResourceName);
         int levelStars = ResourcesUtilities.GetValue(levelItemSO.LevelResourceName);
-        locked.SetActive(!unlocked);
+        if(!unlocked)
+        {
+            levelIcon.color = lockedColor;
+            openLevel.SetActive(false);
+		}
         for(int i = 0; i < stars.Count; i++)
         {
             stars[i].SetActive(i < levelStars);

@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class ShopSceneManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject coinMenu;
+    [SerializeField] private GameObject packMenu;
+
+    public void BackBtnCLicked()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CoinMenuClicked()
     {
-        
-    }
+		packMenu.SetActive(false);
+		coinMenu.SetActive(true);
+	}
+
+    public void PackMenuClicked()
+    {
+		packMenu.SetActive(true);
+        coinMenu.SetActive(false);
+	}
+
+	public void CharacterMenuClicked()
+	{
+		// load character scene
+	}
 }

@@ -76,7 +76,7 @@ namespace MH2B.Rewarding
 			{
 				RewardItemFrame newRewardItem = Instantiate(foundInfo.RewardItemFrame, rewardItemsParent);
 				newRewardItem.Setup(step);
-				newRewardItem.MoveToTarget(rewardMoveTargetPos.anchoredPosition, 1);
+				newRewardItem.MoveToTarget(rewardMoveTargetPos.position, 1);
 			}
 			else
 			{
