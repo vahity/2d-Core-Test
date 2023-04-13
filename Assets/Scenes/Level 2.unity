@@ -9887,11 +9887,14 @@ MonoBehaviour:
   Setting: {fileID: 0}
   canvas: {fileID: 0}
   pausepanel: {fileID: 0}
+  SkinPanel: {fileID: 0}
   Store: {fileID: 0}
   Hooshkoo: {fileID: 0}
   button1: {fileID: 0}
   button2: {fileID: 0}
   button3: {fileID: 0}
+  button4: {fileID: 0}
+  button5: {fileID: 0}
 --- !u!1001 &949731486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19745,11 +19748,14 @@ MonoBehaviour:
   Setting: {fileID: 0}
   canvas: {fileID: 0}
   pausepanel: {fileID: 428935068}
+  SkinPanel: {fileID: 0}
   Store: {fileID: 0}
   Hooshkoo: {fileID: 0}
   button1: {fileID: 1435152987}
   button2: {fileID: 1340425043}
   button3: {fileID: 1560544769}
+  button4: {fileID: 490655725}
+  button5: {fileID: 336440527}
 --- !u!1 &1789635830
 GameObject:
   m_ObjectHideFlags: 0
@@ -23929,7 +23935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2261995516989779172, guid: 8227b50d402f50d479d7d61870afdabd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.6
+      value: 314.7
       objectReference: {fileID: 0}
     - target: {fileID: 2261995516989779172, guid: 8227b50d402f50d479d7d61870afdabd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24349,7 +24355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4352122082908091927, guid: e267c878fe317654ba7143a23ffd6425, type: 3}
       propertyPath: WalkSpeed
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4352122082908091927, guid: e267c878fe317654ba7143a23ffd6425, type: 3}
       propertyPath: m_Enabled
@@ -24555,7 +24561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7849517251311219567, guid: f307100872c8f11449e66ff63474078e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7138082124397886998, guid: f307100872c8f11449e66ff63474078e, type: 3}

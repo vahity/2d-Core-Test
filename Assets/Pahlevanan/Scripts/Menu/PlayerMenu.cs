@@ -14,7 +14,8 @@ public class PlayerMenu : MonoBehaviour
     void Start()
     {
         // anim = GetComponent<Animator>();
-        anim.SetBool("idle", true);
+        anim.SetBool("IDLE", true);
+
     }
 
     // Update is called once per frame
@@ -25,28 +26,27 @@ public class PlayerMenu : MonoBehaviour
             // ?????? ?????? ???? ????? ?? ???? ???? ? ???? ?????
             float fractionOfJourney = Time.deltaTime * speed;
             if (destination != null)
-            { 
-            objectToMove.transform.position = Vector3.Lerp(objectToMove.transform.position, destination.position, fractionOfJourney);
-
-            float newScale = Mathf.Lerp(objectToMove.transform.localScale.x, scaleFactor, fractionOfJourney);
-            objectToMove.transform.localScale = new Vector3(newScale, newScale, newScale);
-
-            // ??? ????? ?? ???? ?????? ????? ????? ???? ????
-            if (objectToMove.transform.position != destination.position)
             {
-                isMoving = true;
-            }
-            else // ?? ??? ??? ????? ???? ?? ????? ????? ???
-            {
-                isMoving = false;
-            }
+                objectToMove.transform.position = Vector3.Lerp(objectToMove.transform.position, destination.position, fractionOfJourney);
+
+                float newScale = Mathf.Lerp(objectToMove.transform.localScale.x, scaleFactor, fractionOfJourney);
+                objectToMove.transform.localScale = new Vector3(newScale, newScale, newScale);
+
+                // ??? ????? ?? ???? ?????? ????? ????? ???? ????
+                if (objectToMove.transform.position != destination.position)
+                {
+                    isMoving = true;
+                }
+                else // ?? ??? ??? ????? ???? ?? ????? ????? ???
+                {
+                    isMoving = false;
+                }
             }
         }
     }
     public void MovePlayer()
     {
         isMoving = true;
-        anim.SetBool("idle", false);
-        anim.SetBool("run", true);
+        anim.SetBool("IDLE", false);
     }
 }
