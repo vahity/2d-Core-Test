@@ -9,6 +9,7 @@ public class PlayerMovment : MonoBehaviour
     public int x12 = 0;
     public GameObject Sefid, Zard, Ghermez;
     public bool Tello;
+    public bool Boost=false;
 
    // public GameObject[] shirtList;
 
@@ -236,15 +237,36 @@ public class PlayerMovment : MonoBehaviour
         {
             SState = MovmentState.Running;
         }
-            if(lizing==false)
-            SState = MovmentState.Leez;
+            if (lizing==false)
+            SState = MovmentState.Leez; 
+
            if (Tello == true)
             SState = MovmentState.Telo;
+
+           if (ShieldAbility.ShieldAnimm==true)
+            anim.SetLayerWeight(3, 1f);
+           else if (ShieldAbility.ShieldAnimm==false)
+            anim.SetLayerWeight(3, 0f);
+
+           if (Boost==true)
+            anim.SetLayerWeight(2, 1f);
+           else if (Boost==false)
+            anim.SetLayerWeight(2, 0f);
+
+           if (MagnetCoin.MagnetAnimm == true)
+            anim.SetLayerWeight(1, 1f);
+           else if (MagnetCoin.MagnetAnimm==false)
+            anim.SetLayerWeight(1, 0f);
+
+
+
+
 
 
         anim.SetInteger("SState", (int)SState);
        
      }
+
     
     public void endanim()
     {
@@ -269,6 +291,7 @@ public class PlayerMovment : MonoBehaviour
             
             anim.SetTrigger("TELOOO");
             Debug.Log("chale");
+            SpeedReset();   
             WalkSpeed = 8f;
             Invoke("SpeedReset", 1.2f);
             StartCoroutine(EnemyDistance());
@@ -286,7 +309,7 @@ public class PlayerMovment : MonoBehaviour
     {
         if (other.tag == "SpeedBoost")
         {
-            anim.SetTrigger("RunFast");
+           // anim.SetTrigger("RunFast");
             Debug.Log("SpeedBoost");
             WalkSpeed = 20f;
             Invoke("SpeedReset", 6f);
@@ -297,6 +320,7 @@ public class PlayerMovment : MonoBehaviour
     
     public void SpeedReset()
     {
+        Boost=false;
         WalkSpeed = 12f;
     }
     public void PauseGame()
@@ -324,6 +348,7 @@ public class PlayerMovment : MonoBehaviour
            // anim.SetTrigger("Leez");
             lizing = false;
             Debug.Log("Liz");
+            
             StartCoroutine(leez());
             
         }
@@ -340,11 +365,11 @@ public class PlayerMovment : MonoBehaviour
     }
     public void SpeedBoost()
     {
-       anim.SetBool("BICYCLE" , true);
+        Boost=true;
+       //anim.SetBool("BICYCLE" , true);
         Debug.Log("SpeedBoost");
         WalkSpeed = 20f;
-        Invoke("SpeedReset", 2f);
-        anim.SetBool("BICYCLE", false);
+      
     }
     public void RunShield()
     {

@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class ShieldAbility : MonoBehaviour
 {
-   public void DisCol()
+    public static bool ShieldAnimm=false;
+    public void DisCol()
     {
-        
+        ShieldAnimm = true;
         StartCoroutine(DisableObjects());
     }
 
@@ -30,6 +31,7 @@ public class ShieldAbility : MonoBehaviour
         }
 
         yield return new WaitForSeconds(4f);
+        ShieldAnimm=false;
 
         foreach (GameObject obj in objectsToDisable)
         {

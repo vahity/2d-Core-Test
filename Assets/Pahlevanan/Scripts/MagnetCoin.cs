@@ -7,6 +7,7 @@ public class MagnetCoin : MonoBehaviour
 {
     public CircleCollider2D coinCollider;
     public float originalColliderSize;
+    public static  bool MagnetAnimm=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class MagnetCoin : MonoBehaviour
             //  Debug.Log("Dimagnet");
         }
         yield return new WaitForSeconds(3f);
+        MagnetAnimm = false;
         foreach (GameObject coin in coins)
         {
             CircleCollider2D coinCollider = coin.GetComponent<CircleCollider2D>();
@@ -49,7 +51,7 @@ public class MagnetCoin : MonoBehaviour
     }
     public void SetColliderSize1()
     {
-        
+        MagnetAnimm=true;
         StartCoroutine(SetColliderSize(40f));
        // Debug.Log("magnet1");
         
