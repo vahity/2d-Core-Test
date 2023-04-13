@@ -6,10 +6,11 @@ using UnityEngine;
 public class PlayerMovment : MonoBehaviour
 {
     public static int x = 0;
-    public int x1 = 0;
+    public int x12 = 0;
     public GameObject Sefid, Zard, Ghermez;
+    public bool Tello;
 
-    public GameObject[] shirtList;
+   // public GameObject[] shirtList;
 
     public GameObject PausePanel;
 
@@ -29,37 +30,46 @@ public class PlayerMovment : MonoBehaviour
     public float WalkSpeed = 4f;
     public float JumpForce = 15f;
 
-    private enum MovmentState {Idle, Running,Jumping,Leez,Telo }
+    public enum MovmentState { Running, Jumping, Telo, Leez, Idle }
 
     [SerializeField] private AudioSource JumpSoundEffect;
     float verticalmove;
     public bool isJumping;
+    public bool lizing;
     public int doubleJump = 2;
     private object collision;
     public bool Ispaused = false;
-     void Awake()
+
+    public bool changeSkin;
+    public bool changeSkinSHIRST;
+    void Awake()
     {
         instance = this;
+        changeSkin = true;  
     }
 
     // Start is called before the first frame update
     private void Start()
-    
-    {
-        int x = 0;
-        int shirtSelected = UserManager.instance.Shirt;
-        foreach(var sl in shirtList)
-            sl.SetActive(false);
 
-        shirtList[shirtSelected].SetActive(true);
+    {
+        Tello = false;
+       // anim.SetBool("run", true);
+
+
+        int x = 0;
+ 
+
+
+
         
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         Sprite = GetComponent<SpriteRenderer>();
-       // anim = GetComponent<Animator>();
+      //  anim = GetComponent<Animator>();
         PausePanel.SetActive(false);
         Time.timeScale = 1;
         isJumping = true;
+        lizing = true;
         if (x==0)
         {
             Sefid.SetActive(false);
@@ -72,7 +82,30 @@ public class PlayerMovment : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        x1 = x;
+       // if (changeSkin)
+      //  {
+       //     for (int i = 0; i < shirtList.Length; i++)
+       //     {
+       //         shirtList[i].SetActive(false);
+
+       //         if (i == shirtList.Length-1)
+       //         {
+       //             changeSkinSHIRST = true;
+       //             changeSkin = false;
+         //       }
+       //     }
+      //  }
+
+
+        if (changeSkinSHIRST)
+        {
+            int shirtSelected = PlayerPrefs.GetInt("Shirt");
+           // shirtList[shirtSelected].SetActive(true);
+            Debug.Log(shirtSelected);
+            changeSkinSHIRST = false;
+        }
+
+        x12 = x;
 
         while (x < 0)
         {
@@ -138,11 +171,11 @@ public class PlayerMovment : MonoBehaviour
         // rb.velocity = new Vector2(rb.velocity.x, J);
 
         // Invoke("jump", 2f);
-      //  if (doubleJump <= 2 && doubleJump >= 0)
-       // {
-            
+        //  if (doubleJump <= 2 && doubleJump >= 0)
+        // {
 
-            if (isJumping)
+        
+        if (isJumping)
             {
                //if (verticalmove >= 0.1f)
                 //{
@@ -160,18 +193,20 @@ public class PlayerMovment : MonoBehaviour
 
 
     }
-    private void UpadateAnimationUpdate()
+    public void UpadateAnimationUpdate()
     {
-        MovmentState state;
+        MovmentState SState;
 
         if(dirx > 0f)
         {
-            state = MovmentState.Idle;
+           
+            SState = MovmentState.Running;
             Sprite.flipX = false;
         }
         else if (dirx < 0f)
         {
-            state = MovmentState.Idle;
+
+            SState = MovmentState.Running;
             Sprite.flipX=true;
         }
         
@@ -186,7 +221,8 @@ public class PlayerMovment : MonoBehaviour
 
             if (rb.velocity.y > .1f)
         {
-            state = MovmentState.Jumping;
+            SState = MovmentState.Jumping;
+            Debug.Log(SState);
         }
             
         
@@ -198,14 +234,22 @@ public class PlayerMovment : MonoBehaviour
       //  }
         else
         {
-            state = MovmentState.Idle;
+            SState = MovmentState.Running;
         }
+            if(lizing==false)
+            SState = MovmentState.Leez;
+           if (Tello == true)
+            SState = MovmentState.Telo;
 
-        anim.SetInteger("state", (int)state);
+
+        anim.SetInteger("SState", (int)SState);
        
      }
     
-
+    public void endanim()
+    {
+     //   anim.Play("run");
+    }
 
     public bool isGrounded()
     {
@@ -222,17 +266,19 @@ public class PlayerMovment : MonoBehaviour
         if(other.tag == "Chale")
         {
             x++;
+            
             anim.SetTrigger("TELOOO");
             Debug.Log("chale");
             WalkSpeed = 8f;
             Invoke("SpeedReset", 1.2f);
             StartCoroutine(EnemyDistance());
+            
 
         }
     }
     IEnumerator EnemyDistance()
     {
-
+        bool Tello = false;
         yield return new WaitForSeconds(9f);
         x--;
     }
@@ -273,18 +319,38 @@ public class PlayerMovment : MonoBehaviour
     }
     public void Liz()
     {
+        if(lizing)
+        {
+           // anim.SetTrigger("Leez");
+            lizing = false;
+            Debug.Log("Liz");
+            StartCoroutine(leez());
+            
+        }
       //  MovmentState state;
-        anim.SetTrigger("Leez");
        
-        Debug.Log("Liz");
+       
+       
 
+    }
+    IEnumerator leez()
+    {
+        yield return new WaitForSeconds(0.5f);
+        lizing = true;
     }
     public void SpeedBoost()
     {
-     //   anim.SetTrigger("RunFast");
+       anim.SetBool("BICYCLE" , true);
         Debug.Log("SpeedBoost");
         WalkSpeed = 20f;
         Invoke("SpeedReset", 2f);
+        anim.SetBool("BICYCLE", false);
+    }
+    public void RunShield()
+    {
+        anim.SetBool("RunShield", true);
+       // Invoke(1f);
+        anim.SetBool("RunShield", false);
     }
     
 

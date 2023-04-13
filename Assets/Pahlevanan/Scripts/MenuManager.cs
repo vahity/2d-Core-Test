@@ -11,14 +11,14 @@ public class MenuManager : MonoBehaviour
     public GameObject pausepanel;
     public GameObject Store;
     public GameObject Hooshkoo;
-    public GameObject skinScreen;
+   // public GameObject skinScreen;
     public Button button1;
     public Button button2;
     public Button button3;
     private void Start()
     {
        // Setting.SetActive(false);
-        skinScreen.SetActive(false);
+      //  skinScreen.SetActive(false);
         pausepanel.SetActive(false);
     }
     public void GoHome()
@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
     }
     public void GoMiniGame()
     {
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadSceneAsync("Level 2");
        // Time.timeScale = 1;
     }
     public void GOSetting()
@@ -67,14 +67,14 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MiniGame1");
     } 
-    public void goskinScreen()
-    {
-        skinScreen.SetActive(true);
-    }
-    public void outskinScreen()
-    {
-        skinScreen.SetActive(false);
-    }
+   // public void goskinScreen()
+  //  {
+  //      skinScreen.SetActive(true);
+  //  }
+ //   public void outskinScreen()
+ //   {
+ //       skinScreen.SetActive(false);
+ //   }
 
     public void DisableButtons()
     {

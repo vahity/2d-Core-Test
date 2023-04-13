@@ -9,10 +9,12 @@ public class PlayerMenu : MonoBehaviour
     public float speed = 1.0f; // ???? ??????? ?????
     private bool isMoving = false; // ??? ????? ?? ??? ???? ????
     public float scaleFactor = 1.0f; // ?????? ????? Scale ?????
+    public Animator anim;
 
     void Start()
     {
-      
+        // anim = GetComponent<Animator>();
+        anim.SetBool("idle", true);
     }
 
     // Update is called once per frame
@@ -44,5 +46,7 @@ public class PlayerMenu : MonoBehaviour
     public void MovePlayer()
     {
         isMoving = true;
+        anim.SetBool("idle", false);
+        anim.SetBool("run", true);
     }
 }
