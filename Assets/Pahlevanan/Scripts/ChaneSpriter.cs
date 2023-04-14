@@ -8,13 +8,17 @@ public class ChaneSpriter : MonoBehaviour
     public Sprite[] outfit1Sprites;
     public Sprite[] outfit2Sprites;
     private string currentOutfit ;
+    void Awake()
+    {
+        currentOutfit = PlayerPrefs.GetString("CurrentSkin");
+
+        SetOutfit(currentOutfit);
+    }
 
     void Start()
     {
         
-        currentOutfit = PlayerPrefs.GetString("CurrentSkin");
-
-        SetOutfit(currentOutfit);
+      
     }
 
     void SetOutfit(string outfit)
@@ -30,6 +34,7 @@ public class ChaneSpriter : MonoBehaviour
                 if (outfit == "outfit1")
                 {
                     renderer.sprite = outfit1Sprites[0];
+                    Debug.Log("1");
              
                 }
                 else if (outfit == "outfit2")
@@ -44,6 +49,7 @@ public class ChaneSpriter : MonoBehaviour
                 if (outfit == "outfit1")
                 {
                     renderer.sprite = outfit1Sprites[1];
+                    Debug.Log("2");
                 }
                 else if (outfit == "outfit2")
                 {
@@ -56,18 +62,20 @@ public class ChaneSpriter : MonoBehaviour
                 if (outfit == "outfit1")
                 {
                     renderer.sprite = outfit1Sprites[2];
+                    Debug.Log("3");
                 }
                 else if (outfit == "outfit2")
                 {
                     renderer.sprite = outfit2Sprites[2];
                 }
             }
-            else if (renderer.sprite == bodySprites[3])
+           else if (renderer.sprite == bodySprites[3])
             {
 
                 if (outfit == "outfit1")
                 {
                     renderer.sprite = outfit1Sprites[3];
+                    Debug.Log("4");
                 }
                 else if (outfit == "outfit2")
                 {
@@ -80,29 +88,98 @@ public class ChaneSpriter : MonoBehaviour
                 if (outfit == "outfit1")
                 {
                     renderer.sprite = outfit1Sprites[4];
+                    Debug.Log("5");
                 }
                 else if (outfit == "outfit2")
                 {
                     renderer.sprite = outfit2Sprites[4];
                 }
             }
+            
+            else if (renderer.sprite == bodySprites[5])
+            {
 
+                if (outfit == "outfit1")
+                {
+                    renderer.sprite = outfit1Sprites[5];
+                        Debug.Log("6");
+                }
+                else if (outfit == "outfit2")
+                {
+                    renderer.sprite = outfit2Sprites[5];
+                }
+            }
+            
+            else if (renderer.sprite == bodySprites[6])
+            {
+
+                if (outfit == "outfit1")
+                {
+                    renderer.sprite = outfit1Sprites[6];
+                      
+                }
+                else if (outfit == "outfit2")
+                {
+                    renderer.sprite = outfit2Sprites[6];
+                }
+            }
+            /*
+            else if (renderer.sprite == bodySprites[7])
+            {
+
+                if (outfit == "outfit1")
+                {
+                    renderer.sprite = outfit1Sprites[7];
+                }
+                else if (outfit == "outfit2")
+                {
+                    renderer.sprite = outfit2Sprites[7];
+                }
+            }
+            else if (renderer.sprite == bodySprites[8])
+            {
+
+                if (outfit == "outfit1")
+                {
+                    renderer.sprite = outfit1Sprites[8];
+                }
+                else if (outfit == "outfit2")
+                {
+                    renderer.sprite = outfit2Sprites[8];
+                }
+            }
+            else if (renderer.sprite == bodySprites[9])
+            {
+
+                if (outfit == "outfit1")
+                {
+                    renderer.sprite = outfit1Sprites[9];
+                }
+                else if (outfit == "outfit2")
+                {
+                    renderer.sprite = outfit2Sprites[9];
+                }
+            } 
+            */
         }
     }
 
-   
-   // {
-       
-     //   if (Input.GetKeyDown(KeyCode.Alpha1))
-      //  {
-    //        SetOutfit("outfit1");
-     //       Debug.Log(KeyCode.Alpha1);
-    //    }
-    //    else if (Input.GetKeyDown(KeyCode.Alpha2))
-     //   {
-    //        SetOutfit("outfit2");
-     //       Debug.Log(KeyCode.Alpha2);
-     //   }
 
-   // }
+     void Update()
+    {
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+               SetOutfit("outfit1");
+               Debug.Log(KeyCode.Alpha1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+           {
+               SetOutfit("outfit2");
+               Debug.Log(KeyCode.Alpha2);
+           }
+
+    }
+
+
 }
