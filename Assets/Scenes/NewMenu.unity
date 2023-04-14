@@ -864,7 +864,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1182341668}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3118,6 +3118,7 @@ GameObject:
   - component: {fileID: 1182341667}
   - component: {fileID: 1182341666}
   - component: {fileID: 1182341665}
+  - component: {fileID: 1182341669}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3204,8 +3205,8 @@ RectTransform:
   - {fileID: 1603624399}
   - {fileID: 361154967}
   - {fileID: 1286759548}
-  - {fileID: 1485734782}
   - {fileID: 208881775}
+  - {fileID: 1485734782}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3214,6 +3215,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1182341669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182341664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94614d79ff931d40a41695100bfb27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkinNumber: 0
 --- !u!1 &1196702467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,7 +3824,7 @@ RectTransform:
   - {fileID: 1952407757}
   - {fileID: 1636098226}
   m_Father: {fileID: 1182341668}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5385,7 +5399,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1808267519}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1182341669}
+        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
+        m_MethodName: UseSkin
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1808267519
 MonoBehaviour:
   m_ObjectHideFlags: 0
