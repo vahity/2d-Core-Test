@@ -9,9 +9,10 @@ public class PlayerMovment : MonoBehaviour
     public int x12 = 0;
     public GameObject Sefid, Zard, Ghermez;
     public bool Tello;
-    public bool Boost=false;
+    public static bool Boost=false;
+    int decreaseAmount = 1;
 
-   // public GameObject[] shirtList;
+    // public GameObject[] shirtList;
 
     public GameObject PausePanel;
 
@@ -53,6 +54,7 @@ public class PlayerMovment : MonoBehaviour
     private void Start()
 
     {
+        InvokeRepeating("ResetX", 0f, 3f);
         Tello = false;
        // anim.SetBool("run", true);
 
@@ -303,8 +305,10 @@ public class PlayerMovment : MonoBehaviour
     {
         bool Tello = false;
         yield return new WaitForSeconds(9f);
-        x--;
+       // x--;
     }
+    void ResetX()
+        { x -= decreaseAmount; }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "SpeedBoost")
@@ -312,7 +316,7 @@ public class PlayerMovment : MonoBehaviour
            // anim.SetTrigger("RunFast");
             Debug.Log("SpeedBoost");
             WalkSpeed = 20f;
-            Invoke("SpeedReset", 6f);
+           
 
         }
 
@@ -369,7 +373,8 @@ public class PlayerMovment : MonoBehaviour
        //anim.SetBool("BICYCLE" , true);
         Debug.Log("SpeedBoost");
         WalkSpeed = 20f;
-      
+        Invoke("SpeedReset", 6f);
+
     }
     public void RunShield()
     {

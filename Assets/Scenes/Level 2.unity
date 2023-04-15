@@ -9887,11 +9887,14 @@ MonoBehaviour:
   Setting: {fileID: 0}
   canvas: {fileID: 0}
   pausepanel: {fileID: 0}
+  SkinPanel: {fileID: 0}
   Store: {fileID: 0}
   Hooshkoo: {fileID: 0}
   button1: {fileID: 0}
   button2: {fileID: 0}
   button3: {fileID: 0}
+  button4: {fileID: 0}
+  button5: {fileID: 0}
 --- !u!1001 &949731486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10984,7 +10987,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099210888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0754e42384f92a45b3443e8bc9471a3, type: 3}
   m_Name: 
@@ -10993,6 +10996,7 @@ MonoBehaviour:
   - {fileID: 737074022}
   - {fileID: 1974294429}
   - {fileID: 1974294429}
+  outfit0Sprites: []
   outfit1Sprites:
   - {fileID: 9202470720510704959, guid: e954c512f591d44408d00a2f09f15731, type: 3}
   - {fileID: 5573978369984759950, guid: e954c512f591d44408d00a2f09f15731, type: 3}
@@ -11001,6 +11005,10 @@ MonoBehaviour:
   - {fileID: 5992766560693633213, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
   - {fileID: 8617447206792704205, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
   - {fileID: 8617447206792704205, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
+  outfit3Sprites: []
+  outfit4Sprites: []
+  outfit5Sprites: []
+  outfit6Sprites: []
 --- !u!114 &1099210897 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4352122082908091915, guid: e267c878fe317654ba7143a23ffd6425, type: 3}
@@ -11922,16 +11930,72 @@ MonoBehaviour:
   - {fileID: 7901061416467165432, guid: 5012a9bb7b4dc2c48880e7c6c79f7440, type: 3}
   - {fileID: 7144393955385648415, guid: 5012a9bb7b4dc2c48880e7c6c79f7440, type: 3}
   - {fileID: -8957402517898167262, guid: 5012a9bb7b4dc2c48880e7c6c79f7440, type: 3}
+  - {fileID: 1737837580136982356, guid: 5012a9bb7b4dc2c48880e7c6c79f7440, type: 3}
+  - {fileID: -2683730428819305340, guid: 5012a9bb7b4dc2c48880e7c6c79f7440, type: 3}
+  - {fileID: 6399403771469551564, guid: 5012a9bb7b4dc2c48880e7c6c79f7440, type: 3}
+  - {fileID: 4792240423698829027, guid: 5012a9bb7b4dc2c48880e7c6c79f7440, type: 3}
+  - {fileID: -4443910368911208322, guid: 5012a9bb7b4dc2c48880e7c6c79f7440, type: 3}
+  outfit0Sprites: []
   outfit1Sprites:
   - {fileID: 9202470720510704959, guid: e954c512f591d44408d00a2f09f15731, type: 3}
   - {fileID: 5573978369984759950, guid: e954c512f591d44408d00a2f09f15731, type: 3}
   - {fileID: 4875793822392546463, guid: 76d54c654ce3c7946935ff9d10c8a26d, type: 3}
   - {fileID: -8447453124541282452, guid: 76d54c654ce3c7946935ff9d10c8a26d, type: 3}
+  - {fileID: -225388436153375033, guid: 76d54c654ce3c7946935ff9d10c8a26d, type: 3}
+  - {fileID: -1172108668788689196, guid: 76d54c654ce3c7946935ff9d10c8a26d, type: 3}
+  - {fileID: 5868098216321591690, guid: 76d54c654ce3c7946935ff9d10c8a26d, type: 3}
+  - {fileID: 8250278552603455735, guid: 76d54c654ce3c7946935ff9d10c8a26d, type: 3}
+  - {fileID: -6808950627992665893, guid: 76d54c654ce3c7946935ff9d10c8a26d, type: 3}
   outfit2Sprites:
   - {fileID: 5992766560693633213, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
   - {fileID: 8617447206792704205, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
   - {fileID: -837625768996090627, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
   - {fileID: -7804118192595708160, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
+  - {fileID: 3730809879536929621, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
+  - {fileID: -3511347533156892909, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
+  - {fileID: 4132220270856218341, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
+  - {fileID: -4274567922688458882, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
+  - {fileID: -1684028568771779998, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
+  outfit3Sprites:
+  - {fileID: -4840408137795421943, guid: dec2b9b18c0c0ee4f84805888d83d007, type: 3}
+  - {fileID: -1350545324380078173, guid: dec2b9b18c0c0ee4f84805888d83d007, type: 3}
+  - {fileID: -837625768996090627, guid: 5af0d0da98ffcac409d6ed70dedfa93b, type: 3}
+  - {fileID: -7058675285681415572, guid: dec2b9b18c0c0ee4f84805888d83d007, type: 3}
+  - {fileID: 1418895244885569292, guid: dec2b9b18c0c0ee4f84805888d83d007, type: 3}
+  - {fileID: 6727840801410472472, guid: dec2b9b18c0c0ee4f84805888d83d007, type: 3}
+  - {fileID: -7646837412266240676, guid: dec2b9b18c0c0ee4f84805888d83d007, type: 3}
+  - {fileID: -7108821377324152304, guid: dec2b9b18c0c0ee4f84805888d83d007, type: 3}
+  - {fileID: 3147690312286932118, guid: dec2b9b18c0c0ee4f84805888d83d007, type: 3}
+  outfit4Sprites:
+  - {fileID: 9202470720510704959, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  - {fileID: 5573978369984759950, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  - {fileID: 1088867059602827428, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  - {fileID: 4298312243954992815, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  - {fileID: -9020349825913903575, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  - {fileID: -4693172173708544850, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  - {fileID: -7699275034350635119, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  - {fileID: 8204073068321265380, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  - {fileID: -808209583688047507, guid: e954c512f591d44408d00a2f09f15731, type: 3}
+  outfit5Sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  outfit6Sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1185680007
 GameObject:
   m_ObjectHideFlags: 0
@@ -19745,11 +19809,14 @@ MonoBehaviour:
   Setting: {fileID: 0}
   canvas: {fileID: 0}
   pausepanel: {fileID: 428935068}
+  SkinPanel: {fileID: 0}
   Store: {fileID: 0}
   Hooshkoo: {fileID: 0}
   button1: {fileID: 1435152987}
   button2: {fileID: 1340425043}
   button3: {fileID: 1560544769}
+  button4: {fileID: 490655725}
+  button5: {fileID: 336440527}
 --- !u!1 &1789635830
 GameObject:
   m_ObjectHideFlags: 0
@@ -23929,7 +23996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2261995516989779172, guid: 8227b50d402f50d479d7d61870afdabd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.6
+      value: 314.7
       objectReference: {fileID: 0}
     - target: {fileID: 2261995516989779172, guid: 8227b50d402f50d479d7d61870afdabd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24349,7 +24416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4352122082908091927, guid: e267c878fe317654ba7143a23ffd6425, type: 3}
       propertyPath: WalkSpeed
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4352122082908091927, guid: e267c878fe317654ba7143a23ffd6425, type: 3}
       propertyPath: m_Enabled
@@ -24382,11 +24449,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5532124524850515572, guid: a35054d7925891948991e59f336f45c9, type: 3}
       propertyPath: m_Size.x
-      value: 25.282711
+      value: 19.011463
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532124524850515572, guid: a35054d7925891948991e59f336f45c9, type: 3}
+      propertyPath: m_Size.y
+      value: 4.916896
       objectReference: {fileID: 0}
     - target: {fileID: 5532124524850515572, guid: a35054d7925891948991e59f336f45c9, type: 3}
       propertyPath: m_Offset.x
-      value: -0.04729271
+      value: 0.18686819
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532124524850515572, guid: a35054d7925891948991e59f336f45c9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.3724656
       objectReference: {fileID: 0}
     - target: {fileID: 5532124524850515573, guid: a35054d7925891948991e59f336f45c9, type: 3}
       propertyPath: m_RootOrder
