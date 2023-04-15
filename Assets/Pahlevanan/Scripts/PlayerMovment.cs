@@ -316,7 +316,7 @@ public class PlayerMovment : MonoBehaviour
            // anim.SetTrigger("RunFast");
             Debug.Log("SpeedBoost");
             WalkSpeed = 20f;
-            Invoke("SpeedReset", 6f);
+           
 
         }
 
@@ -373,7 +373,8 @@ public class PlayerMovment : MonoBehaviour
        //anim.SetBool("BICYCLE" , true);
         Debug.Log("SpeedBoost");
         WalkSpeed = 20f;
-      
+        Invoke("SpeedReset", 6f);
+
     }
     public void RunShield()
     {

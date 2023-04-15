@@ -34,7 +34,7 @@ public class MenuManager : MonoBehaviour
     }
     public void GoHome()
     {
-        SceneManager.LoadSceneAsync("NewMenu");
+        SceneManager.LoadScene("NewMenu");
     }
     public void GoMiniGame()
     {
@@ -93,7 +93,7 @@ public class MenuManager : MonoBehaviour
         button2.interactable = false;
         button3.interactable = false;
 
-        Invoke("EnableButtons", 3f);
+        Invoke("EnableButtons", 4f);
     }
 
     private void EnableButtons1()
