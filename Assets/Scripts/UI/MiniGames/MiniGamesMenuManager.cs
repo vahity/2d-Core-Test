@@ -7,12 +7,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum MiniGameDifficulty
+{
+    Easy,
+    Normal,
+    Hard
+}
+
 [Serializable]
 public class MiniGame
 {
+    public string ResourceName;
     [TextArea] public string Description;
     public Sprite Icon;
     public string Scene;
+    public string EasyResourceName;
+	public string NormalResourceName;
+	public string HardResourceName;
 }
 
 public class MiniGamesMenuManager : MonoBehaviour
