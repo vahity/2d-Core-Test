@@ -991,7 +991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211820219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.24, y: -2.73, z: -3.0404284}
+  m_LocalPosition: {x: -8.24, y: -3.3, z: -3.0404284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 363281815}
@@ -5408,7 +5408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1800015910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1182341669}
+        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
+        m_MethodName: UseSkin
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1800015910
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class Player_Life : MonoBehaviour
     public ItemCollector ic;
     private Animator anim;
     private Rigidbody2D rb;
+   
+
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource khord;
     public float GameTime;
@@ -48,6 +50,13 @@ public class Player_Life : MonoBehaviour
             Health_03.SetActive(true);
             Health_04.SetActive(true);
             Health_05.SetActive(true);
+        }
+    }
+    private void Update()
+    {
+       if( PlayerMovment.x >=3 )
+        {
+            Die2();
         }
     }
 
@@ -106,7 +115,7 @@ public class Player_Life : MonoBehaviour
         if (other.tag == "bullet")
         {
             Debug.Log("moooordBaAshaee");
-            Die();
+            Die2();
         }
     }
 
@@ -123,6 +132,26 @@ public class Player_Life : MonoBehaviour
         ic.Savecoin();
         ic.Getcoin();
     }
+    private void Die2()
+    {
+        
+        GameTime = Time.time;
+
+        deathSoundEffect.Play();
+       // rb.bodyType = RigidbodyType2D.Static;
+        StopAll();
+        
+        menuLose.SetActive(true);
+        GTime.text = GameTime.ToString();
+        Cointext.text = ic.score.ToString();
+        ic.Savecoin();
+        ic.Getcoin();
+      //  Invoke("StopAll", 3f);
+    }
+    public void StopAll()
+    {
+        Time.timeScale = 0;
+    }
     public void win()
     {
         GameTime = Time.time;
@@ -135,6 +164,7 @@ public class Player_Life : MonoBehaviour
         khord.Play();
 
     }
+
    
 
 }
