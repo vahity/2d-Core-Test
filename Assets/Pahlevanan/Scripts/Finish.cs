@@ -8,7 +8,7 @@ public class Finish : MonoBehaviour
 {
     public Player_Life PL;
     private AudioSource finishsound;
-    public GameObject PausePanel;
+    public  GameObject WinPanel;
     public  TMP_Text barfinish;
 
 
@@ -22,14 +22,27 @@ public class Finish : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
+        {
             // finishsound.Play();
             //    invoke("completeLevel", 2f);
             pl.win();
-            PausePanel.SetActive(true);
-            Time.timeScale = 0;
-        barfinish.text = PL.saveHealth.ToString();
-        completeLevel();
+            barfinish.text = PL.saveHealth.ToString();
+           // WinPanel.SetActive(true);
+             StartCoroutine(Delay());
+            // WinPanel.SetActive(true);
+
+
+
+            completeLevel();
+
+        }
+    }
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(3f);
+        WinPanel.SetActive(true);
         
+        //Time.timeScale = 0;
     }
     private void completeLevel()
     {

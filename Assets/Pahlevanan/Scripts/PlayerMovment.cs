@@ -29,7 +29,7 @@ public class PlayerMovment : MonoBehaviour
 
 
     private float dirx = 0f;
-    public float WalkSpeed = 4f;
+    public  static float WalkSpeed = 12f;
     public float JumpForce = 15f;
 
     public enum MovmentState { Running, Jumping, Telo, Leez, Idle, BARGH }
@@ -60,6 +60,7 @@ public class PlayerMovment : MonoBehaviour
 
 
         int x = 0;
+        Time.timeScale = 1;
  
 
 
@@ -306,15 +307,19 @@ public class PlayerMovment : MonoBehaviour
     {
         if(other.tag == "Chale")
         {
-            x++;
+            if (WalkSpeed != 0)
+            {
+                x++;
+
+                anim.SetTrigger("TELOOO");
+                Debug.Log("chale");
+                SpeedReset();
+                WalkSpeed = 8f;
+                Invoke("SpeedReset", 1.2f);
+                StartCoroutine(EnemyDistance());
+            }
             
-            anim.SetTrigger("TELOOO");
-            Debug.Log("chale");
-            SpeedReset();   
-            WalkSpeed = 8f;
-            Invoke("SpeedReset", 1.2f);
-            StartCoroutine(EnemyDistance());
-            
+
 
         }
     }
@@ -326,6 +331,7 @@ public class PlayerMovment : MonoBehaviour
     }
     void ResetX()
         { x -= decreaseAmount; }
+    /*
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "SpeedBoost")
@@ -338,7 +344,7 @@ public class PlayerMovment : MonoBehaviour
         }
 
     }
-    
+    */
     public void SpeedReset()
     {
         Boost=false;

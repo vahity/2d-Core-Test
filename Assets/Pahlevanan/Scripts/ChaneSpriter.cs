@@ -27,7 +27,7 @@ public class ChaneSpriter : MonoBehaviour
 
     void Start()
     {
-        SideNumber = PlayerPrefs.GetInt("Side");
+       /* 
         if (SideNumber == 1)
         {
             Debug.Log("Side1");
@@ -53,7 +53,36 @@ public class ChaneSpriter : MonoBehaviour
         {
             SideChar.sprite = images[6];
         }
+       */
+    }
 
+    public void UISkin()
+    {
+        if (SideNumber == 1)
+        {
+            Debug.Log("Side1");
+            SideChar.sprite = images[1];
+        }
+        else if (SideNumber == 2)
+        {
+            SideChar.sprite = images[2];
+        }
+        else if (SideNumber == 3)
+        {
+            SideChar.sprite = images[3];
+        }
+        else if (SideNumber == 4)
+        {
+            SideChar.sprite = images[4];
+        }
+        else if (SideNumber == 5)
+        {
+            SideChar.sprite = images[5];
+        }
+        else if (SideNumber == 6)
+        {
+            SideChar.sprite = images[6];
+        }
     }
 
     void SetOutfit(string outfit)
@@ -493,6 +522,13 @@ public class ChaneSpriter : MonoBehaviour
 
      void Update()
     {
+        SideNumber = PlayerPrefs.GetInt("Side");
+        UISkin();
+
+
+
+
+
 
         /*     if (Input.GetKeyDown(KeyCode.Alpha1))
              {

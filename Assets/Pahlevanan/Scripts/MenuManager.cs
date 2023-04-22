@@ -42,7 +42,8 @@ public class MenuManager : MonoBehaviour
     public void GoMiniGame()
     {
         SceneManager.LoadSceneAsync("Level 2");
-       // Time.timeScale = 1;
+        Time.timeScale = 1;
+        PlayerMovment.WalkSpeed = 12;
     }
     public void GOSetting()
     {

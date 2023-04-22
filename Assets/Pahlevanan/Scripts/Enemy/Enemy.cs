@@ -76,7 +76,15 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator Warning()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.7f);
+        BullWar = false;
+        yield return new WaitForSeconds(0.4f);
+        BullWar = true;
+        yield return new WaitForSeconds(0.7f);
+        BullWar = false;
+        yield return new WaitForSeconds(0.4f);
+        BullWar = true;
+        yield return new WaitForSeconds(0.7f);
         BullWar = false;
     }
 

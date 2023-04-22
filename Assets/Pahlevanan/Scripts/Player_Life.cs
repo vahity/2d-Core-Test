@@ -11,7 +11,7 @@ public class Player_Life : MonoBehaviour
     public TMP_Text Cointext, GTime, wcointext, wGtime;
     public float Coinval;
     public ItemCollector ic;
-    private Animator anim;
+    public Animator anim;
     private Rigidbody2D rb;
    
 
@@ -37,7 +37,7 @@ public class Player_Life : MonoBehaviour
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+       // anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         Health = 5;
 
@@ -62,9 +62,9 @@ public class Player_Life : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Snow")
+        if (other.tag == "Chale")
         {
-            Debug.Log("khord");
+            Debug.Log("khordChalejooni");
             Khord();
 
 
@@ -115,6 +115,8 @@ public class Player_Life : MonoBehaviour
         if (other.tag == "bullet")
         {
             Debug.Log("moooordBaAshaee");
+           // Destroy(Enemy.bullet);
+
             Die2();
         }
     }
@@ -125,12 +127,14 @@ public class Player_Life : MonoBehaviour
 
         deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
-        anim.SetTrigger("death");
-        menuLose.SetActive(true);
+        anim.SetTrigger("LOSE");
+       // menuLose.SetActive(true);
         GTime.text = GameTime.ToString();
         Cointext.text = ic.score.ToString();
         ic.Savecoin();
         ic.Getcoin();
+        PlayerMovment.WalkSpeed = 0f;
+        StartCoroutine(DelayPanel());
     }
     private void Die2()
     {
@@ -138,14 +142,17 @@ public class Player_Life : MonoBehaviour
         GameTime = Time.time;
 
         deathSoundEffect.Play();
-       // rb.bodyType = RigidbodyType2D.Static;
-        StopAll();
-        
-        menuLose.SetActive(true);
+        // rb.bodyType = RigidbodyType2D.Static;
+        // StopAll();
+        anim.SetBool("BARGH" , true);
+        PlayerMovment.WalkSpeed = 0f;
+       
         GTime.text = GameTime.ToString();
         Cointext.text = ic.score.ToString();
         ic.Savecoin();
         ic.Getcoin();
+      //  anim.SetTrigger("BARGH");
+        StartCoroutine(DelayPanel());
       //  Invoke("StopAll", 3f);
     }
     public void StopAll()
@@ -154,9 +161,16 @@ public class Player_Life : MonoBehaviour
     }
     public void win()
     {
+        anim.SetTrigger("WIN");
         GameTime = Time.time;
         wcointext.text = ic.score.ToString();
         wGtime.text = GameTime.ToString();
+        
+        Debug.Log("WInANIm");
+        PlayerMovment.WalkSpeed = 0f;
+        anim.SetBool("WIN", true);
+        StartCoroutine(DelayPanelWin());
+        
 
     }
     private void Khord()
@@ -164,7 +178,21 @@ public class Player_Life : MonoBehaviour
         khord.Play();
 
     }
+    IEnumerator DelayPanel()
+    {
+        yield return new WaitForSeconds(3f);
+        menuLose.SetActive(true);
+        anim.SetBool("BARGH", false);
+        StopAll();  
+    }
+    IEnumerator DelayPanelWin()
+    {
+        yield return new WaitForSeconds(4f);
+        
+      //  Finish.WinPanel.SetActive(true);
+        StopAll();
+    }
 
-   
+
 
 }
