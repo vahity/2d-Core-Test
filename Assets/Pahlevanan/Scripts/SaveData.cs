@@ -54,6 +54,7 @@ public class SaveData : MonoBehaviour
             PlayerPrefs.SetString("CurrentSkin", "outfit6");
             PlayerPrefs.SetInt("Side", SkinNumber);
         }
+       
 
     }
 }

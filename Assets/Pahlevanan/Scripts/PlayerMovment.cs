@@ -7,7 +7,7 @@ public class PlayerMovment : MonoBehaviour
 {
     public static int x = 0;
     public int x12 = 0;
-    public GameObject Sefid, Zard, Ghermez;
+    public GameObject Sefid, Zard, Ghermez, BulletWarning;
     public bool Tello;
     public static bool Boost=false;
     int decreaseAmount = 1;
@@ -29,10 +29,10 @@ public class PlayerMovment : MonoBehaviour
 
 
     private float dirx = 0f;
-    public float WalkSpeed = 4f;
+    public  static float WalkSpeed = 12f;
     public float JumpForce = 15f;
 
-    public enum MovmentState { Running, Jumping, Telo, Leez, Idle }
+    public enum MovmentState { Running, Jumping, Telo, Leez, Idle, BARGH }
 
     [SerializeField] private AudioSource JumpSoundEffect;
     float verticalmove;
@@ -60,6 +60,7 @@ public class PlayerMovment : MonoBehaviour
 
 
         int x = 0;
+        Time.timeScale = 1;
  
 
 
@@ -98,6 +99,14 @@ public class PlayerMovment : MonoBehaviour
          //       }
        //     }
       //  }
+      if (Enemy.BullWar)
+        {
+            BulletWarning.SetActive(true);
+        }
+      else
+        {
+            BulletWarning.SetActive(false);
+        }
 
 
         if (changeSkinSHIRST)
@@ -129,6 +138,12 @@ public class PlayerMovment : MonoBehaviour
         {
             Zard.SetActive(false);
             Ghermez.SetActive(true);
+        }
+        if ( x >=3)
+        {
+            WalkSpeed = 0f;
+            anim.SetBool("LOSE",true );
+            
         }
         
         //Walk Methode
@@ -260,6 +275,9 @@ public class PlayerMovment : MonoBehaviour
            else if (MagnetCoin.MagnetAnimm==false)
             anim.SetLayerWeight(1, 0f);
 
+           
+
+
 
 
 
@@ -289,15 +307,19 @@ public class PlayerMovment : MonoBehaviour
     {
         if(other.tag == "Chale")
         {
-            x++;
+            if (WalkSpeed != 0)
+            {
+                x++;
+
+                anim.SetTrigger("TELOOO");
+                Debug.Log("chale");
+                SpeedReset();
+                WalkSpeed = 8f;
+                Invoke("SpeedReset", 1.2f);
+                StartCoroutine(EnemyDistance());
+            }
             
-            anim.SetTrigger("TELOOO");
-            Debug.Log("chale");
-            SpeedReset();   
-            WalkSpeed = 8f;
-            Invoke("SpeedReset", 1.2f);
-            StartCoroutine(EnemyDistance());
-            
+
 
         }
     }
@@ -309,6 +331,7 @@ public class PlayerMovment : MonoBehaviour
     }
     void ResetX()
         { x -= decreaseAmount; }
+    /*
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "SpeedBoost")
@@ -321,12 +344,13 @@ public class PlayerMovment : MonoBehaviour
         }
 
     }
-    
+    */
     public void SpeedReset()
     {
         Boost=false;
         WalkSpeed = 12f;
     }
+
     public void PauseGame()
     {
         if (!Ispaused)

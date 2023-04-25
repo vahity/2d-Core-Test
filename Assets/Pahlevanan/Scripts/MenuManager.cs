@@ -18,11 +18,13 @@ public class MenuManager : MonoBehaviour
     public Button button3;
     public Button button4;
     public Button button5;
+    
     private void Start()
     {
        // Setting.SetActive(false);
       //  skinScreen.SetActive(false);
         pausepanel.SetActive(false);
+        
     }
     public void Update()
     {
@@ -35,11 +37,13 @@ public class MenuManager : MonoBehaviour
     public void GoHome()
     {
         SceneManager.LoadScene("NewMenu");
+        Time.timeScale = 1f;
     }
     public void GoMiniGame()
     {
         SceneManager.LoadSceneAsync("Level 2");
-       // Time.timeScale = 1;
+        Time.timeScale = 1;
+        PlayerMovment.WalkSpeed = 12;
     }
     public void GOSetting()
     {
@@ -133,7 +137,7 @@ public class MenuManager : MonoBehaviour
     }
     IEnumerator cameraController1()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.1f);
         Camera_Follower.FollowSpeed = 2f;
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadSceneAsync("Level 2");

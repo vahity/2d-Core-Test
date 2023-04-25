@@ -27,8 +27,62 @@ public class ChaneSpriter : MonoBehaviour
 
     void Start()
     {
-        
-      
+       /* 
+        if (SideNumber == 1)
+        {
+            Debug.Log("Side1");
+            SideChar.sprite = images[1];
+        }
+        else if (SideNumber == 2)
+        {
+            SideChar.sprite = images[2];
+        }
+        else if (SideNumber == 3)
+        {
+            SideChar.sprite = images[3];
+        }
+        else if (SideNumber == 4)
+        {
+            SideChar.sprite = images[4];
+        }
+        else if (SideNumber == 5)
+        {
+            SideChar.sprite = images[5];
+        }
+        else if (SideNumber == 6)
+        {
+            SideChar.sprite = images[6];
+        }
+       */
+    }
+
+    public void UISkin()
+    {
+        if (SideNumber == 1)
+        {
+            Debug.Log("Side1");
+            SideChar.sprite = images[1];
+        }
+        else if (SideNumber == 2)
+        {
+            SideChar.sprite = images[2];
+        }
+        else if (SideNumber == 3)
+        {
+            SideChar.sprite = images[3];
+        }
+        else if (SideNumber == 4)
+        {
+            SideChar.sprite = images[4];
+        }
+        else if (SideNumber == 5)
+        {
+            SideChar.sprite = images[5];
+        }
+        else if (SideNumber == 6)
+        {
+            SideChar.sprite = images[6];
+        }
     }
 
     void SetOutfit(string outfit)
@@ -37,20 +91,20 @@ public class ChaneSpriter : MonoBehaviour
         SpriteRenderer[] renderers = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer renderer in renderers)
         {
-            if (renderer.sprite == bodySprites[0] )
+            if (renderer.sprite == bodySprites[0])
             {
-               
+
 
                 if (outfit == "outfit1")
                 {
                     renderer.sprite = outfit1Sprites[0];
                     Debug.Log("1");
-             
+
                 }
                 else if (outfit == "outfit2")
                 {
                     renderer.sprite = outfit2Sprites[0];
-               
+
                 }
                 else if (outfit == "outfit3")
                 {
@@ -140,7 +194,7 @@ public class ChaneSpriter : MonoBehaviour
 
                 }
             }
-           else if (renderer.sprite == bodySprites[3])
+            else if (renderer.sprite == bodySprites[3])
             {
 
                 if (outfit == "outfit1")
@@ -206,14 +260,14 @@ public class ChaneSpriter : MonoBehaviour
 
                 }
             }
-            
+
             else if (renderer.sprite == bodySprites[5])
             {
 
                 if (outfit == "outfit1")
                 {
                     renderer.sprite = outfit1Sprites[5];
-                        Debug.Log("6");
+                    Debug.Log("6");
                 }
                 else if (outfit == "outfit2")
                 {
@@ -240,14 +294,14 @@ public class ChaneSpriter : MonoBehaviour
 
                 }
             }
-            
+
             else if (renderer.sprite == bodySprites[6])
             {
 
                 if (outfit == "outfit1")
                 {
                     renderer.sprite = outfit1Sprites[6];
-                      
+
                 }
                 else if (outfit == "outfit2")
                 {
@@ -274,7 +328,7 @@ public class ChaneSpriter : MonoBehaviour
 
                 }
             }
-            
+
             else if (renderer.sprite == bodySprites[7])
             {
 
@@ -341,7 +395,114 @@ public class ChaneSpriter : MonoBehaviour
 
                 }
             }
+
+            else if (renderer.sprite == bodySprites[9])
+            {
+
+                if (outfit == "outfit1")
+                {
+                    Debug.Log("10");
+                    renderer.sprite = outfit1Sprites[9];
+                }
+                else if (outfit == "outfit2")
+                {
+                    renderer.sprite = outfit2Sprites[9];
+                }
+                else if (outfit == "outfit3")
+                {
+                    renderer.sprite = outfit3Sprites[9];
+
+                }
+                else if (outfit == "outfit4")
+                {
+                    renderer.sprite = outfit4Sprites[9];
+
+                }
+                else if (outfit == "outfit5")
+                {
+                    renderer.sprite = outfit5Sprites[9];
+
+                }
+                else if (outfit == "outfit6")
+                {
+                    renderer.sprite = outfit6Sprites[9];
+
+                }
+
+            }
+            else if (renderer.sprite == bodySprites[10])
+            {
+
+                if (outfit == "outfit1")
+                {
+                    Debug.Log("11");
+                    renderer.sprite = outfit1Sprites[10];
+                }
+                else if (outfit == "outfit2")
+                {
+                    renderer.sprite = outfit2Sprites[10];
+                }
+                else if (outfit == "outfit3")
+                {
+                    renderer.sprite = outfit3Sprites[10];
+
+                }
+                else if (outfit == "outfit4")
+                {
+                    renderer.sprite = outfit4Sprites[10];
+
+                }
+                else if (outfit == "outfit5")
+                {
+                    renderer.sprite = outfit5Sprites[10];
+
+                }
+                else if (outfit == "outfit6")
+                {
+                    renderer.sprite = outfit6Sprites[10];
+
+                }
+
+            }
+
             /*
+            else if (renderer.sprite == bodySprites[11])
+            {
+
+                if (outfit == "outfit1")
+                {
+                    Debug.Log("12");
+                    renderer.sprite = outfit1Sprites[11];
+                }
+                else if (outfit == "outfit2")
+                {
+                    renderer.sprite = outfit2Sprites[11];
+                }
+                else if (outfit == "outfit3")
+                {
+                    renderer.sprite = outfit3Sprites[11];
+
+                }
+                else if (outfit == "outfit4")
+                {
+                    renderer.sprite = outfit4Sprites[11];
+
+                }
+                else if (outfit == "outfit5")
+                {
+                    renderer.sprite = outfit5Sprites[11];
+
+                }
+                else if (outfit == "outfit6")
+                {
+                    renderer.sprite = outfit6Sprites[11];
+
+                }
+
+            }
+            */
+            /*
+
             else if (renderer.sprite == bodySprites[9])
             {
 
@@ -361,6 +522,13 @@ public class ChaneSpriter : MonoBehaviour
 
      void Update()
     {
+        SideNumber = PlayerPrefs.GetInt("Side");
+        UISkin();
+
+
+
+
+
 
         /*     if (Input.GetKeyDown(KeyCode.Alpha1))
              {
@@ -373,6 +541,10 @@ public class ChaneSpriter : MonoBehaviour
                 Debug.Log(KeyCode.Alpha2);
             }
        */
+
+
+
+        /*
        SideNumber = PlayerPrefs.GetInt("Side");
         if (SideNumber == 1)
         {
@@ -400,7 +572,7 @@ public class ChaneSpriter : MonoBehaviour
             SideChar.sprite = images[6];
         }
 
-
+    */
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     

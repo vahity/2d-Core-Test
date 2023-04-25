@@ -48,5 +48,6 @@ public class PlayerMenu : MonoBehaviour
     {
         isMoving = true;
         anim.SetBool("IDLE", false);
+        PlayerMovment.WalkSpeed = 12f;
     }
 }
