@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 20f;
+    public static bool BullWar = false;
     
 
 
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition3.position, speed * Time.deltaTime);
             }
-            else if  (PlayerMovment.x == 3)
+            else if  (PlayerMovment.x >= 3)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             }
@@ -51,6 +52,9 @@ public class Enemy : MonoBehaviour
                 nextFire = Time.time + 1.0f / fireRate;
                 Invoke("Shoot", 10f);
                
+
+             
+               
             }
         }
 
@@ -59,20 +63,37 @@ public class Enemy : MonoBehaviour
 
 
     }
+    
 
-    private void Shoot()
+    public  void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * bulletSpeed;
+        BullWar = true;
+        StartCoroutine(Warning());
+
+    }
+    IEnumerator Warning()
+    {
+        yield return new WaitForSeconds(0.7f);
+        BullWar = false;
+        yield return new WaitForSeconds(0.4f);
+        BullWar = true;
+        yield return new WaitForSeconds(0.7f);
+        BullWar = false;
+        yield return new WaitForSeconds(0.4f);
+        BullWar = true;
+        yield return new WaitForSeconds(0.7f);
+        BullWar = false;
     }
 
 
-    
 
-   
 
-    
+
+
+
 }
     
 

@@ -9,26 +9,41 @@ public class MenuManager : MonoBehaviour
     public GameObject Setting;
     public GameObject canvas;
     public GameObject pausepanel;
+    public GameObject SkinPanel;
     public GameObject Store;
     public GameObject Hooshkoo;
    // public GameObject skinScreen;
     public Button button1;
     public Button button2;
     public Button button3;
+    public Button button4;
+    public Button button5;
+    
     private void Start()
     {
        // Setting.SetActive(false);
       //  skinScreen.SetActive(false);
         pausepanel.SetActive(false);
+        
+    }
+    public void Update()
+    {
+        if (PlayerMovment.Boost == true)
+            DisableButtons1();
+        else if (PlayerMovment.Boost == false)
+            EnableButtons1();
+
     }
     public void GoHome()
     {
         SceneManager.LoadScene("NewMenu");
+        Time.timeScale = 1f;
     }
     public void GoMiniGame()
     {
         SceneManager.LoadSceneAsync("Level 2");
-       // Time.timeScale = 1;
+        Time.timeScale = 1;
+        PlayerMovment.WalkSpeed = 12;
     }
     public void GOSetting()
     {
@@ -82,7 +97,22 @@ public class MenuManager : MonoBehaviour
         button2.interactable = false;
         button3.interactable = false;
 
-        Invoke("EnableButtons", 3f);
+        Invoke("EnableButtons", 4f);
+    }
+
+    private void EnableButtons1()
+    {
+        button4.interactable = true;
+        button5.interactable = true;
+       
+    }
+    public void DisableButtons1()
+    {
+        button4.interactable = false;
+        button5.interactable = false;
+        
+
+        
     }
 
     private void EnableButtons()
@@ -107,15 +137,23 @@ public class MenuManager : MonoBehaviour
     }
     IEnumerator cameraController1()
     {
-        yield return new WaitForSeconds(2f);
-        Camera_Follower.FollowSpeed = 3f;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.1f);
+        Camera_Follower.FollowSpeed = 2f;
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadSceneAsync("Level 2");
 
     }
     public void DisableCanvas()
     {
         canvas.SetActive(false);
+    }
+    public void goSkinPanel()
+    {
+        SkinPanel.SetActive(true);
+    }
+    public void outSkinPanel()
+    {
+        SkinPanel.SetActive(false);
     }
 
 }
