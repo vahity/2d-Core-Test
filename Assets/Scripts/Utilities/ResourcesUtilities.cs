@@ -48,7 +48,7 @@ namespace MH2B.GameModules.ResourceManagment
 			return resource.GetValue();
 		}
 
-		public static void Setavailibility(string resourceName, bool availibility)
+		public static void SetAvailibility(string resourceName, bool availibility)
 		{
 			ResourceControllerBase resource = ResourceManager.Instance?.GetResourceByName<ResourceControllerBase>(resourceName);
 			if (resource == default)
@@ -66,6 +66,20 @@ namespace MH2B.GameModules.ResourceManagment
 				throw new Exception("Resource name : " + resourceName + " may not be valid !!!!");
 			}
 			resource.SetValue(value);
+		}
+
+		public static void OperationResult(string resourceName, Rewarding.RewardOperation operation , int amount)
+		{
+			ResourceControllerBase resource = ResourceManager.Instance?.GetResourceByName<ResourceControllerBase>(resourceName);
+			switch (operation)
+			{
+				case Rewarding.RewardOperation.AddValue:
+					resource?.SetValue(resource.GetValue() + amount);
+					break;
+				case Rewarding.RewardOperation.SetValue:
+					resource?.SetValue(amount);
+					break;
+			}
 		}
 
 	}

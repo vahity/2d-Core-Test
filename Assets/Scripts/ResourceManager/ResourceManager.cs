@@ -1,3 +1,4 @@
+using MH2B.Utilities;
 using System;
 using System.Collections.Generic;
 using UnityEditor;
@@ -15,7 +16,7 @@ namespace MH2B.GameModules.ResourceManagment
 		protected override void Awake()
 		{
 			base.Awake();
-			LoadAllResources();
+			Init();
 		}
 
 		private void OnApplicationQuit()
@@ -34,6 +35,11 @@ namespace MH2B.GameModules.ResourceManagment
 #endif
 				SaveAllResources();
 			}
+		}
+
+		public void Init()
+		{
+			LoadAllResources();
 		}
 
 		public T GetResourceByName<T>(string resourceName) where T : class
@@ -57,9 +63,9 @@ namespace MH2B.GameModules.ResourceManagment
 
 		public void LoadAllResources()
 		{
-			foreach (var item in ResourcesContainer.ItemResources)
+			foreach (var item in ResourcesContainer.CurrencyResources)
 			{
-				LoadResource(item.ItemResource);
+				LoadResource(item.CurrencyResource);
 			}
 		}
 

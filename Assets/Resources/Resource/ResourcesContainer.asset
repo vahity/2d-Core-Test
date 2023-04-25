@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724f979f736b4df4899d0f50c1fd3da0, type: 3}
   m_Name: ResourcesContainer
   m_EditorClassIdentifier: 
-  ItemResources:
+  CurrencyResources:
+  - {fileID: 11400000, guid: 10debe0665763314a8aa3198b751daf2, type: 2}
   - {fileID: 11400000, guid: ad3e8345378be38439cd1ba3f2c87f47, type: 2}
+  - {fileID: 11400000, guid: 80516f987e2b95e418f92c417e2a289c, type: 2}
+  - {fileID: 11400000, guid: ee9658bb0ffd4774fa1f4afd013a9380, type: 2}
+  - {fileID: 11400000, guid: d4a16177c52c32c4b898359bbd54b945, type: 2}
+  - {fileID: 11400000, guid: 6a855dd7374881844b8679cb13b878af, type: 2}
+  - {fileID: 11400000, guid: 60d4cb66fed23124e85af8908de311e2, type: 2}
+  - {fileID: 11400000, guid: 4dccddb9025479545b648a986e9e4f7e, type: 2}
+  - {fileID: 11400000, guid: f2947a0b7aa4fea4084e2deb4fad7d7d, type: 2}
+  - {fileID: 11400000, guid: 756c2f56be69a5e47b7258fcf982c5f4, type: 2}
+  - {fileID: 11400000, guid: 034b5ae0166718146b5608f0fd385606, type: 2}
+  - {fileID: 11400000, guid: 6d45f6ed1163b3f4d90bddeeb6e4b793, type: 2}
