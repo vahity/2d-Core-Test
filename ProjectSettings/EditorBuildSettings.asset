@@ -26,6 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mini 4.unity
     guid: 2419e0b9c0ea1b24b8bfe51efe26f9a0
+  - enabled: 1
+    path: Assets/Scenes/Levels.unity
+    guid: 49ab393550ea87848adcadee436aeac4
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 10c3d64896505454ab618dd7893cdbc4
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: dcd3a20712f84cc44a7d392a06244fa8
   - enabled: 0
     path: Assets/Scenes/Level 4.unity
     guid: f667df1228032ab4e8d242dcce703774

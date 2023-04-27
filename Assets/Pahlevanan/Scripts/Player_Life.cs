@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Drawing;
+using JetBrains.Annotations;
 
 public class Player_Life : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Player_Life : MonoBehaviour
     public int saveHealth = 5;
 
 
-    public int Health;
+    public static int Health;
 
     public GameObject menuLose;
 
@@ -39,7 +40,7 @@ public class Player_Life : MonoBehaviour
     {
        // anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        Health = 5;
+         Health = 5;
 
         //if save health == 5
         if (saveHealth == 5)

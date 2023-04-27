@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMenu : MonoBehaviour
 {
     public GameObject objectToMove; // ?????? ?? ???? ????? ???
@@ -49,5 +50,6 @@ public class PlayerMenu : MonoBehaviour
         isMoving = true;
         anim.SetBool("IDLE", false);
         PlayerMovment.WalkSpeed = 12f;
+       
     }
 }

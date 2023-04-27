@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a74f643f33c36284eb5e6da2d8ebfa36, type: 3}
-  m_Name: Shield
+  m_Name: 1
   m_EditorClassIdentifier: 
-  id: cd24803d-0da8-4be2-8a41-786628a6c735
+  id: c436c35f-f2ca-48f6-89ae-039485da6747
   CurrencyResource:
-    id: cd24803d-0da8-4be2-8a41-786628a6c735
+    id: c436c35f-f2ca-48f6-89ae-039485da6747
     resouurceName: 
     isAvailable: 0
     value: 0

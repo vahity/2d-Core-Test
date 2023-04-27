@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    
     public GameObject Setting;
     public GameObject canvas;
     public GameObject pausepanel;
@@ -39,6 +40,10 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("NewMenu");
         Time.timeScale = 1f;
     }
+    public void GoLevels()
+    {
+        SceneManager.LoadScene("Levels");
+    }
     public void GoMiniGame()
     {
         SceneManager.LoadSceneAsync("Level 2");
@@ -47,7 +52,7 @@ public class MenuManager : MonoBehaviour
     }
     public void GOSetting()
     {
-        Setting.SetActive(true);
+        SceneManager.LoadScene("Settings");
     }
     public void OutSetting()
     {
@@ -155,6 +160,7 @@ public class MenuManager : MonoBehaviour
     {
         SkinPanel.SetActive(false);
     }
+
 
 }
 

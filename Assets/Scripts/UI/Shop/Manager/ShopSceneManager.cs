@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopSceneManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class ShopSceneManager : MonoBehaviour
 
     public void BackBtnCLicked()
     {
-
+        SceneManager.LoadScene("NewMenu");
     }
 
     public void CoinMenuClicked()

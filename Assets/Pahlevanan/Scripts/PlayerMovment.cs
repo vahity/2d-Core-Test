@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
+    
     public static int x = 0;
     public int x12 = 0;
     public GameObject Sefid, Zard, Ghermez, BulletWarning;
@@ -54,13 +55,16 @@ public class PlayerMovment : MonoBehaviour
     private void Start()
 
     {
+        AnimRefresh1();
+
+
         InvokeRepeating("ResetX", 0f, 3f);
         Tello = false;
        // anim.SetBool("run", true);
 
 
         int x = 0;
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
  
 
 
@@ -406,9 +410,22 @@ public class PlayerMovment : MonoBehaviour
        // Invoke(1f);
         anim.SetBool("RunShield", false);
     }
-    
-
-  
    
+
+    public void AnimRefresh1()
+    {
+        anim.SetLayerWeight(0, 1f);
+        anim.SetLayerWeight(1, 0f);
+        anim.SetLayerWeight(2, 0f);
+        anim.SetLayerWeight(3, 0f);
+
+    }
+
+
+
+
+
+
+
 
 }

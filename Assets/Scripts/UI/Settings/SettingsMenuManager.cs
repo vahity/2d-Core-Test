@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenuManager : MonoBehaviour
 {
@@ -98,8 +99,8 @@ public class SettingsMenuManager : MonoBehaviour
 
 	public void BackBtnClicked()
 	{
-
-	}
+        SceneManager.LoadScene("NewMenu");
+    }
 
 	public void SettingsBtnClicked()
 	{

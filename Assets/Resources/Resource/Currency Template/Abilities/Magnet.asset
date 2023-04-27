@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a74f643f33c36284eb5e6da2d8ebfa36, type: 3}
-  m_Name: Shield
+  m_Name: Magnet
   m_EditorClassIdentifier: 
-  id: cd24803d-0da8-4be2-8a41-786628a6c735
+  id: c7a0a862-ab98-4588-b339-31ac6fcccad1
   CurrencyResource:
-    id: cd24803d-0da8-4be2-8a41-786628a6c735
-    resouurceName: 
-    isAvailable: 0
+    id: c7a0a862-ab98-4588-b339-31ac6fcccad1
+    resouurceName: Magnet
+    isAvailable: 1
     value: 0

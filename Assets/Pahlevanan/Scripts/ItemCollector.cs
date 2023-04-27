@@ -1,3 +1,4 @@
+using MH2B.GameModules.ResourceManagment;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
-    public  float coins  , score = 0f;
+    public  int coins  , score = 0;
     [SerializeField] private Text coinText;
     [SerializeField] private AudioSource coinAudioSource;
     public Transform CoinTarget;
@@ -62,12 +63,17 @@ public class ItemCollector : MonoBehaviour
     }
     public  void Savecoin ()
     {
+       
+      
         coins += score;
-        PlayerPrefs.SetFloat("Savecoin", coins);
+        ResourcesUtilities.SetValue("Coin", score);
+
+        PlayerPrefs.SetInt("Savecoin", coins);
         //float loadedFloat = PlayerPrefs.GetFloat("myFloat");
     }
     public  void Getcoin()
     {
-        coins = PlayerPrefs.GetFloat("Savecoin");
+        coins = PlayerPrefs.GetInt("Savecoin");
     }
+
 }

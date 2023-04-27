@@ -70,8 +70,8 @@ public class LevelsMenuManager : MonoBehaviour
 
 	public void BackBtnClicked()
 	{
-		// Load back scene
-	}
+        SceneManager.LoadScene("NewMenu");
+    }
 
 	public void HambergBtnClicked()
 	{

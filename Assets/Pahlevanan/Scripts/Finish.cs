@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using MH2B.GameModules.ResourceManagment;
 
 public class Finish : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class Finish : MonoBehaviour
 
 
 
+
             completeLevel();
 
         }
@@ -46,7 +48,15 @@ public class Finish : MonoBehaviour
     }
     private void completeLevel()
     {
-       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (Player_Life.Health>=3)
+        {
+            ResourcesUtilities.SetValue("Level_1", 3);
+            ResourcesUtilities.SetAvailibility("Level_2", true);
+
+        }
+        else
+            ResourcesUtilities.SetValue("Level_1", 2);
 
     }
 

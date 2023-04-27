@@ -46,6 +46,7 @@ public class MagnetCoin : MonoBehaviour
             CircleCollider2D coinCollider = coin.GetComponent<CircleCollider2D>();
            // float originalColliderSize = coinCollider.radius;
             coinCollider.radius = 2;
+            Debug.Log("DiiiiiMagnet");
         }
            
     }
