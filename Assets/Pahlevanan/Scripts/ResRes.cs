@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using MH2B.GameModules.ResourceManagment;
-using TMPro.EditorUtilities;
+//using TMPro.EditorUtilities;
 using TMPro;
 
 public class ResRes : MonoBehaviour

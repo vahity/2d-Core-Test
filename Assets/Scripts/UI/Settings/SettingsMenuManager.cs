@@ -80,6 +80,7 @@ public class SettingsMenuManager : MonoBehaviour
 	public void PhoneApply()
 	{
 		PlayerPrefs.SetString(GeneralParams.Phone, phoneInputField.text);
+		Debug.Log(PlayerPrefs.GetString(phoneInputField.text));
 	}
 
 	public void LinkdinClicked()

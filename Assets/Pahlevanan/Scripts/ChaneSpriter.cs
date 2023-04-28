@@ -58,7 +58,11 @@ public class ChaneSpriter : MonoBehaviour
 
     public void UISkin()
     {
-        if (SideNumber == 1)
+        if(SideNumber == 0)
+        {
+            SideChar.sprite = images[0];
+        }
+       else if (SideNumber == 1)
         {
             Debug.Log("Side1");
             SideChar.sprite = images[1];

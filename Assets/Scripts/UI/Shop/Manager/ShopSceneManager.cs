@@ -27,6 +27,6 @@ public class ShopSceneManager : MonoBehaviour
 
 	public void CharacterMenuClicked()
 	{
-		// load character scene
+        SceneManager.LoadScene("Char");
 	}
 }
