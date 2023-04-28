@@ -154,14 +154,13 @@ public class MenuManager : MonoBehaviour
     }
     public void goSkinPanel()
     {
-        SkinPanel.SetActive(true);
+        SceneManager.LoadScene("Char");
     }
-    public void outSkinPanel()
+    public void GoShop()
     {
-        SkinPanel.SetActive(false);
+        SceneManager.LoadScene("Shop");
     }
-
-
+    
 }
 
 

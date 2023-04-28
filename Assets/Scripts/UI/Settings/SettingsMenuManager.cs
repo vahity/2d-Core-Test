@@ -84,12 +84,12 @@ public class SettingsMenuManager : MonoBehaviour
 
 	public void LinkdinClicked()
 	{
-		OpenUrl("");
+		OpenUrl("https://www.linkedin.com/company/skillent-ir");
 	}
 
 	public void InstagramClicked()
 	{
-		OpenUrl("");
+		OpenUrl("https://instagram.com/skillentstudio?igshid=YmMyMTA2M2Y=");
 	}
 
 	private void OpenUrl(string url)
