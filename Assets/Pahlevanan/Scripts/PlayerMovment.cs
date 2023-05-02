@@ -64,7 +64,7 @@ public class PlayerMovment : MonoBehaviour
 
 
         int x = 0;
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
  
 
 
