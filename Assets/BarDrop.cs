@@ -5,16 +5,16 @@ using UnityEngine;
 public class BarDrop : MonoBehaviour
 {
     public GameObject[] bars;
-    public int i = 0;
+    public  static  int ii = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Snow"))
+        if (collision.CompareTag("Chale"))
         {
-            bars[i].gameObject.transform.SetParent(null);
-            bars[i].AddComponent<Rigidbody2D>();
+           // bars[ii].gameObject.transform.SetParent(null);
+            bars[ii].AddComponent<Rigidbody2D>();
             Debug.Log("bardrop");
-            i++;
+            ii++;
         }
     }
 
