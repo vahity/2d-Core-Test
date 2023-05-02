@@ -31,6 +31,7 @@ public class Finish : MonoBehaviour
            // WinPanel.SetActive(true);
              StartCoroutine(Delay());
             // WinPanel.SetActive(true);
+            PlayerMovment.Boost = false;
 
 
 

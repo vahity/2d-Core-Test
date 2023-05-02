@@ -21,7 +21,7 @@ public class MagnetCoin : MonoBehaviour
     {
         
     }
-    IEnumerator SetColliderSize(float size)
+    public void  SetColliderSize(float size)
     {
         // Find all gameobjects with tag "Coin"
         GameObject[] coins = GameObject.FindGameObjectsWithTag("coin");
@@ -29,7 +29,7 @@ public class MagnetCoin : MonoBehaviour
         // Loop through all coins and set their collider size
         foreach (GameObject coin in coins)
         {
-            Debug.Log(coin);
+           
             CircleCollider2D coinCollider = coin.GetComponent<CircleCollider2D>();
             float originalColliderSize = coinCollider.radius;
 
@@ -39,22 +39,42 @@ public class MagnetCoin : MonoBehaviour
             //  coinCollider.radius = originalColliderSize;
             //  Debug.Log("Dimagnet");
         }
+      //  yield return new WaitForSeconds(3f);
+      //  MagnetAnimm = false;
+      //  DiMagent();
+      //  foreach (GameObject coin in coins)
+      //  {
+      //      CircleCollider2D coinCollider = coin.GetComponent<CircleCollider2D>();
+      //     // float originalColliderSize = coinCollider.radius;
+      //      coinCollider.radius = 2;
+      //      Debug.Log("DiiiiiMagnet");
+      //  }
+           
+    }
+    IEnumerator DiMagent()
+    {
         yield return new WaitForSeconds(3f);
         MagnetAnimm = false;
+        coinCollider.radius = 2;
+        GameObject[] coins = GameObject.FindGameObjectsWithTag("coin");
         foreach (GameObject coin in coins)
         {
+            Debug.Log(coin);
+
             CircleCollider2D coinCollider = coin.GetComponent<CircleCollider2D>();
-           // float originalColliderSize = coinCollider.radius;
+            // float originalColliderSize = coinCollider.radius;
             coinCollider.radius = 2;
             Debug.Log("DiiiiiMagnet");
         }
-           
     }
+
     public void SetColliderSize1()
     {
         MagnetAnimm=true;
-        StartCoroutine(SetColliderSize(40f));
-       // Debug.Log("magnet1");
-        
+        SetColliderSize(40f);
+       
+       StartCoroutine(DiMagent());
+        Debug.Log("TAhClassSetCollder  Size");
+
     }
 }
