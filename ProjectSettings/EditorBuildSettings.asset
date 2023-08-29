@@ -38,19 +38,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Char.unity
     guid: 615a667ea17bb6946b6bc69eee6b3570
-  - enabled: 0
-    path: Assets/Scenes/Level 4.unity
-    guid: f667df1228032ab4e8d242dcce703774
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/Mini 1.unity
-    guid: 061e9c99c24554c4aada679f7a701b9e
-  - enabled: 0
-    path: Assets/Scenes/Menu.unity
-    guid: 287ab6755cad43242bea3257e34bcb94
-  - enabled: 0
-    path: Assets/scences/menu11.unity
-    guid: 15c04638c41f47b489567770d13045ee
+  - enabled: 1
+    path: Assets/Scenes/Level 2.2.unity
+    guid: a3a9b0f8f9f6ccd439613e2c1b5b9c4e
+  - enabled: 1
+    path: Assets/Scenes/MiniGames.unity
+    guid: 5684b8719a40a10439dceb6be2056575
+  - enabled: 1
+    path: Assets/Scenes/Level 3.2.unity
+    guid: a32757045b451d443bc7a42902076b22
+  - enabled: 1
+    path: Assets/Scenes/Level 4.2.unity
+    guid: 78ec89b449aa7594c987a1bd572207b7
   m_configObjects: {}

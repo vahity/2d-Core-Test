@@ -1,3 +1,4 @@
+using MH2B.GameModules.ResourceManagment;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,9 @@ public class PlayerMenu : MonoBehaviour
     {
         // anim = GetComponent<Animator>();
         anim.SetBool("IDLE", true);
-
+      
     }
-
+    
     // Update is called once per frame
     void Update()
     {

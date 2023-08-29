@@ -8,21 +8,23 @@ using TMPro;
 
 public class ResRes : MonoBehaviour
 {
-    
+    public string tempcoin;
     public TMP_Text CoinSaveU;
     // Start is called before the first frame update
     void Start()
     {
-       // ResourcesUtilities.GetValue("Coin");
-     //   ResourcesUtilities.GetValue("Coin").ToString();
+        // ResourcesUtilities.GetValue("Coin");
+        //   ResourcesUtilities.GetValue("Coin").ToString();
 
-       
+        tempcoin = ResourcesUtilities.GetValue("Coin").ToString();
+        CoinSaveU.text = tempcoin + CoinSaveU.text;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CoinSaveU.text = ResourcesUtilities.GetValue("Coin").ToString();
+        
+        
     }
     /*
     public void One2Two()

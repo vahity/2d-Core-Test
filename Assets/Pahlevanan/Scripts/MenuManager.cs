@@ -1,12 +1,14 @@
+using MH2B.GameModules.ResourceManagment;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    
+   static int Xxx = 0;
     public GameObject Setting;
     public GameObject canvas;
     public GameObject pausepanel;
@@ -42,7 +44,19 @@ public class MenuManager : MonoBehaviour
     }
     public void GoLevels()
     {
-        SceneManager.LoadScene("Levels");
+        ResourcesUtilities.SetAvailibility("Level_3", true);
+        if (Xxx==0)
+        SceneManager.LoadScene("Level 2");
+        else
+        {
+            SceneManager.LoadScene("Levels");
+        }
+
+        Xxx++;
+    }
+    public void Go2MiniGames()
+    {
+        SceneManager.LoadScene("MiniGames");
     }
     public void GoMiniGame()
     {

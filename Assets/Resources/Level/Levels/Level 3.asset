@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelIndex: 2
   LevelResourceName: Level_3
-  LevelScene: {fileID: 102900000, guid: 8fc2cbb0477085d43bcfa7faf797dc6d, type: 3}
+  LevelScene: {fileID: 102900000, guid: a32757045b451d443bc7a42902076b22, type: 3}
   LevelIcon: {fileID: 21300000, guid: 011b499b0417124458759680d46bf2eb, type: 3}

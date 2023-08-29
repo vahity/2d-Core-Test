@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
             if (Time.time > nextFire)
             {
                 nextFire = Time.time + 1.0f / fireRate;
-                Invoke("Shoot", 10f);
+                Invoke("Shoot", 9f);
                
 
              

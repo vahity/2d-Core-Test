@@ -54,4 +54,8 @@ public class MiniGamesMenuManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(scene);
     }
+    public void BackBtnClicked()
+    {
+        SceneManager.LoadScene("NewMenu");
+    }
 }

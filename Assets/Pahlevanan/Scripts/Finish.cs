@@ -57,7 +57,11 @@ public class Finish : MonoBehaviour
 
         }
         else
+        {
             ResourcesUtilities.SetValue("Level_1", 2);
+            ResourcesUtilities.SetAvailibility("Level_2", true);
+        }
+            
 
     }
 

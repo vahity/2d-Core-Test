@@ -62,7 +62,7 @@ public class LevelsMenuManager : MonoBehaviour
 
 	private void OnOpenLevelClicked(LevelItemSO levelItemSO)
 	{
-		if (!canOpenLevelScenes) return;
+		//if (!canOpenLevelScenes) return;
 
 		canOpenLevelScenes = false;
 		SceneManager.LoadScene(levelItemSO.LevelScene.name);

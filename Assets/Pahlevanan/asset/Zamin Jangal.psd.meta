@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: 5325358696807558978
     second: Zamin Jangal_0
+  - first:
+      213: -8820047937103108933
+    second: Zamin Jangal_1
+  - first:
+      213: -7112082354741845184
+    second: Zamin Jangal_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -115,7 +121,7 @@ TextureImporter:
         width: 3504
         height: 626
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -123,6 +129,48 @@ TextureImporter:
       bones: []
       spriteID: 24f60c0158977e940800000000000000
       internalID: 5325358696807558978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zamin Jangal_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 986
+        width: 3507
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb46d0fb125e89580800000000000000
+      internalID: -8820047937103108933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zamin Jangal_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1790
+        width: 3507
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043e940a7cecc4d90800000000000000
+      internalID: -7112082354741845184
       vertices: []
       indices: 
       edges: []

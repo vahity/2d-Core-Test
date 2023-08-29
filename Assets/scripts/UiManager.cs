@@ -17,8 +17,8 @@ public class UiManager : MonoBehaviour {
 		score = 0;
 		InvokeRepeating ("UpdateScore",1f,0.7f);
 
-        Time.timeScale = 0;
-        Invoke("hi", 2f);
+        Time.timeScale = 1;
+       // Invoke("hi", 2f);
         
 
 
